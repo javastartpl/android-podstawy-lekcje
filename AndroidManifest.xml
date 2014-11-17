@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.javastart.ap"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/javastart_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Listy (ListView) -->
+        <activity
+            android:name=".listview.ListExampleSelectionActivity"
+            android:label="Listy (ListView)" />
+        <activity
+            android:name=".listview.SimpleListActivity"
+            android:label="Prosta lista" />
+        <activity
+            android:name=".listview.CustomListActivity"
+            android:label="Lista niestandardowa" />
+        <activity
+            android:name=".listview.AlternatelyItemColorListActivity"
+            android:label="Naprzemienne kolory" />
+        <activity
+            android:name=".sharedpreferences.SharedPreferencesActivity"
+            android:label="SharedPreferences" >
+        </activity>
+
+        <!-- Ustawienia (Preferences) -->
+        <activity
+            android:name=".preference.CurrentPreferencesActivity"
+            android:label="Aktualne ustawienia" />
+        <activity
+            android:name=".preference.PreferenceExampleActivity"
+            android:label="Zmiana ustawień" />
+        <activity
+            android:name=".preference.HomeworkPreferenceActivity"
+            android:label="Zadanie" />
+
+        <!-- Camera -->
+        <activity
+            android:name=".camera.CameraSelectionActivity"
+            android:label="Obsługa aparatu" />
+        <activity
+            android:name=".camera.SimpleCameraActivity"
+            android:label="Uruchomienie aparatu" />
+
+        <!-- File System -->
+        <activity
+            android:name=".filesystem.FileSystemListActivity"
+            android:label="System plików" >
+        </activity>
+        <activity
+            android:name=".filesystem.FileSystemActivity"
+            android:label="System plików" >
+        </activity>
+        <activity
+            android:name=".filesystem.FileSystemHomeworkActivity"
+            android:label="System plików" >
+        </activity>
+    </application>
+
+</manifest>
