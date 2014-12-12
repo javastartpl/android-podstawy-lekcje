@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.javastart.ap"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/javastart_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Layouts -->
+
+        <activity
+            android:name=".layouts.LayoutListActivity"
+            android:label="Layouty" />
+        <activity
+            android:name=".layouts.LayoutExampleActivity"
+            android:label="Layout - Przykład z lekcji" />
+        <activity
+            android:name=".layouts.LayoutTrainingActivity"
+            android:label="Layout - Zadanie 1" />
+        <activity
+            android:name=".layouts.LayoutSecondTrainingActivity"
+            android:label="Layout - Zadanie 2" />
+
+        <!-- Listy (ListView) -->
+        <activity
+            android:name=".listview.ListExampleSelectionActivity"
+            android:label="Listy (ListView)" />
+        <activity
+            android:name=".listview.SimpleListActivity"
+            android:label="Prosta lista" />
+        <activity
+            android:name=".listview.CustomListActivity"
+            android:label="Lista niestandardowa" />
+        <activity
+            android:name=".listview.AlternatelyItemColorListActivity"
+            android:label="Naprzemienne kolory" />
+        <activity
+            android:name=".sharedpreferences.SharedPreferencesActivity"
+            android:label="SharedPreferences" />
+
+        <!-- Ustawienia (Preferences) -->
+        <activity
+            android:name=".preference.CurrentPreferencesActivity"
+            android:label="Aktualne ustawienia" />
+        <activity
+            android:name=".preference.PreferenceExampleActivity"
+            android:label="Zmiana ustawień" />
+        <activity
+            android:name=".preference.HomeworkPreferenceActivity"
+            android:label="Zadanie" />
+
+        <!-- Camera -->
+        <activity
+            android:name=".camera.CameraSelectionActivity"
+            android:label="Obsługa aparatu" />
+        <activity
+            android:name=".camera.SimpleCameraActivity"
+            android:label="Uruchomienie aparatu" />
+
+        <!-- File System -->
+        <activity
+            android:name=".filesystem.FileSystemListActivity"
+            android:label="System plików" />
+        <activity
+            android:name=".filesystem.FileSystemActivity"
+            android:label="System plików" />
+        <activity
+            android:name=".filesystem.FileSystemHomeworkActivity"
+            android:label="System plików" />
+
+        <!-- AsyncTask -->
+        <activity
+            android:name=".asynctask.AsyncTaskListActivity"
+            android:label="AsyncTask" />
+        <activity
+            android:name=".asynctask.AsyncTaskExampleActivity"
+            android:label="AsyncTask Lekcja" />
+        <activity
+            android:name=".asynctask.AsyncTaskTrainingActivity"
+            android:label="AsyncTask Zadanie" />
+
+        <!-- Intent -->
+        <activity
+            android:name=".intent.IntentListActivity"
+            android:label="Intent" />
+        <activity
+            android:name=".intent.IntentExampleActivity"
+            android:label="Intent - Przykład" />
+        <activity
+            android:name=".intent.IntentHomeworkActivity"
+            android:label="Intent - Zadanie" />
+    </application>
+</manifest>
