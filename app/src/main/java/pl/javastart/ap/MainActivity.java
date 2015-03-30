@@ -5,6 +5,7 @@ import java.util.List;
 
 import pl.javastart.ap.asynctask.AsyncTaskListActivity;
 import pl.javastart.ap.camera.CameraSelectionActivity;
+import pl.javastart.ap.database.DatabaseListActivity;
 import pl.javastart.ap.filesystem.FileSystemActivity;
 import pl.javastart.ap.filesystem.FileSystemListActivity;
 import pl.javastart.ap.intent.IntentExampleActivity;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
 		lessons.add(new Lesson("Obsługa aparatu", CameraSelectionActivity.class));
 		lessons.add(new Lesson("System plików", FileSystemListActivity.class));
 		lessons.add(new Lesson("AsyncTask", AsyncTaskListActivity.class));
+        lessons.add(new Lesson(("Baza danych"), DatabaseListActivity.class));
 	}
 
 	@Override
