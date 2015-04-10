@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pl.javastart.ap"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -11,15 +11,18 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/javastart_logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,9 +41,6 @@
         <activity
             android:name=".layouts.LayoutTrainingActivity"
             android:label="Layout - Zadanie 1" />
-        <activity
-            android:name=".layouts.LayoutSecondTrainingActivity"
-            android:label="Layout - Zadanie 2" />
 
         <!-- Listy (ListView) -->
         <activity
@@ -58,6 +58,11 @@
         <activity
             android:name=".sharedpreferences.SharedPreferencesActivity"
             android:label="SharedPreferences" />
+
+        <!-- Dialog -->
+        <activity
+            android:name=".dialog.DialogActivity"
+            android:label="Dialogi" />
 
         <!-- Ustawienia (Preferences) -->
         <activity
@@ -118,5 +123,22 @@
         <activity
             android:name=".database.manual.ManualDatabaseActivity"
             android:label="Baza danych - manualna obsługa" />
+        <activity
+            android:name=".database.manual.ManualDatabaseBookListActivity"
+            android:label="Lista książek" />
+        <activity
+            android:name=".database.manual.ManualDatabaseUserListActivity"
+            android:label="Lista użytkowników" />
+        <activity
+            android:name=".database.manual.ManualDatabaseUserActivity"
+            android:label="Użytkownik" />
+        <activity
+            android:name=".database.manual.ManualLoanActivity"
+            android:label="@string/title_activity_manual_loan" />
+        <activity
+            android:name=".fragment.FragmentActivity"
+            android:label="@string/title_activity_fragment" >
+        </activity>
     </application>
+
 </manifest>

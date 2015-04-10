@@ -13,7 +13,7 @@ public class ManualDatabaseHelper extends SQLiteOpenHelper {
     private static ManualDatabaseHelper instance;
 
     private static final String DATABASE_NAME = "manualDB";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 4;
 
     private ManualDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -45,7 +45,28 @@ public class ManualDatabaseHelper extends SQLiteOpenHelper {
 
     private void recreateDB(SQLiteDatabase db) {
         db.execSQL("drop table if exists user");
-        db.execSQL("create table user (id integer primary key autoincrement not null, name TEXT, surname TEXT)");
+        db.execSQL("create table user (" +
+                "id integer primary key autoincrement not null, " +
+                "name TEXT, " +
+                "surname TEXT" +
+                ")");
+
+        db.execSQL("drop table if exists book");
+        db.execSQL("create table book (" +
+                "id integer primary key autoincrement not null, " +
+                "title TEXT, " +
+                "author TEXT, " +
+                "publication_year integer" +
+                ")");
+
+        db.execSQL("drop table if exists loan");
+        db.execSQL("create table loan (" +
+                "id integer primary key autoincrement not null, " +
+                "user_id integer, " +
+                "book_id integer, " +
+                "date_from date" +
+                "date_to date" +
+                ")");
     }
 
 
