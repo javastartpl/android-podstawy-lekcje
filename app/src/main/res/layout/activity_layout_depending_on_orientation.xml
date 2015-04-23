@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/javastart_big_black"
+            android:layout_width="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et imperdiet purus. Sed rhoncus libero et sem posuere, ac fermentum elit pulvinar. Sed ornare tristique quam in mollis. Vivamus blandit accumsan turpis, eu lobortis erat. In bibendum massa eu fermentum ullamcorper. Quisque sit amet magna ut lorem auctor hendrerit non vitae dolor. Suspendisse ac orci at magna porttitor porttitor. Phasellus eget lectus gravida, condimentum nisl aliquam, tincidunt lectus. Aliquam erat volutpat. Phasellus vulputate velit at magna tempor maximus. Vestibulum ut arcu libero. Sed non nisl finibus, sodales eros vel, lobortis metus. Suspendisse potenti. Curabitur pellentesque metus in justo finibus condimentum. Integer vitae lacus in eros imperdiet pellentesque ac iaculis lorem.  Pellentesque non leo et elit posuere mollis ut nec libero. Nam semper ut orci vel fringilla. Nulla diam dui, tristique quis elementum in, luctus ut odio. Donec imperdiet, lectus eget aliquam tincidunt, arcu quam fermentum felis, et cursus magna enim non mi. Morbi non egestas turpis. Aliquam pretium sem non nisi tincidunt lobortis. Mauris tristique nibh vitae quam blandit maximus. Aliquam nec scelerisque dolor. Pellentesque efficitur risus eget nisl eleifend, sed fermentum lectus hendrerit. Duis pharetra feugiat porttitor. Nulla tristique purus dui. Aenean accumsan, sem quis viverra rhoncus, nibh lorem."
+            android:id="@+id/textView7" />
+    </LinearLayout>
+</ScrollView>

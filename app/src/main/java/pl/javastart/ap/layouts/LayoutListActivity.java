@@ -16,10 +16,11 @@ import pl.javastart.ap.R;
 
 public class LayoutListActivity extends Activity {
 
-    private List<Lesson> lessons = new ArrayList<>(2);
+    private List<Lesson> lessons = new ArrayList<>(3);
     {
-        lessons.add(0, new Lesson("Przykład z lekcji", LayoutExampleActivity.class));
-        lessons.add(1, new Lesson("Zadanie do wykonania 1",LayoutTrainingActivity.class));
+        lessons.add(new Lesson("Przykład z lekcji", LayoutExampleActivity.class));
+        lessons.add(new Lesson("Zadanie do wykonania 1",LayoutTrainingActivity.class));
+        lessons.add(new Lesson("Layout w zależności od orientacji",LayoutDependingOnOrientationActivity.class));
     }
 
     @Override
