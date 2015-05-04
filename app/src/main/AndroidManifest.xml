@@ -67,6 +67,13 @@
             android:name=".dialog.DialogActivity"
             android:label="Dialogi" />
 
+        <!-- Fragmenty -->
+        <activity
+            android:name=".fragment.FragmentActivity"
+            android:label="@string/title_activity_fragment" />
+        <activity android:name=".fragment.AnimalDetailActivity"
+            android:label="Info" />
+
         <!-- Ustawienia (Preferences) -->
         <activity
             android:name=".preference.CurrentPreferencesActivity"
@@ -139,10 +146,7 @@
             android:name=".database.manual.ManualLoanActivity"
             android:label="@string/title_activity_manual_loan" />
 
-        <!-- Fragments -->
-        <activity
-            android:name=".fragment.FragmentActivity"
-            android:label="@string/title_activity_fragment" />
+
     </application>
 
 </manifest>

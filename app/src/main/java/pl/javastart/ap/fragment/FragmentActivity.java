@@ -1,27 +1,45 @@
 package pl.javastart.ap.fragment;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 
 import pl.javastart.ap.R;
 
-public class FragmentActivity extends Activity {
+public class FragmentActivity extends Activity implements AnimalListFragment.OnAnimalClickedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment);
-
-        Log.d("fragment", "before creating");
-        MyFragment fragment = new MyFragment();
-        Log.d("fragment", "after creating");
-
-        Log.d("fragment", "before adding");
-        getFragmentManager().beginTransaction().add(fragment, "").commit();
-        Log.d("fragment", "after adding");
+        setContentView(R.layout.fragment_animal_list);
     }
 
+    @Override
+    public void onAnimalClicked(int id) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(AnimalDetailFragment.ANIMAL_ID, id);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            AnimalDetailFragment animalDetailFragment = new AnimalDetailFragment();
+            animalDetailFragment.setArguments(bundle);
+            findViewById(R.id.label_show_details).setVisibility(View.GONE);
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container_animal_detail, animalDetailFragment);
+            transaction.addToBackStack(null);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.commit();
+
+            return;
+        }
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Intent intent = new Intent(this, AnimalDetailActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
+    }
 }
