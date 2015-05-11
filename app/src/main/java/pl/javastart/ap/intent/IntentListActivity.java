@@ -14,8 +14,6 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import pl.javastart.ap.filesystem.FileSystemActivity;
-import pl.javastart.ap.filesystem.FileSystemHomeworkActivity;
 
 public class IntentListActivity extends Activity {
 
@@ -28,7 +26,7 @@ public class IntentListActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_all_lessons_list);
 
 		ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 

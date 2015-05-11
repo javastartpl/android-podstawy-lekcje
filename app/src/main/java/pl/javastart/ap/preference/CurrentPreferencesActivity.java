@@ -62,7 +62,9 @@ public class CurrentPreferencesActivity extends Activity {
 		washingMachine.setText(washingMachineValue);
 		name.setText(nameValue);
 		animal.setText(animalValue);
-		iceCreamFlavour.setText(iceCreamFlavourValues.toString());
+        if(iceCreamFlavourValues != null) {
+            iceCreamFlavour.setText(iceCreamFlavourValues.toString());
+        }
 		ringtone.setText(ringtoneValue);
 	}
 

@@ -14,8 +14,6 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import pl.javastart.ap.asynctask.AsyncTaskExampleActivity;
-import pl.javastart.ap.asynctask.AsyncTaskTrainingActivity;
 import pl.javastart.ap.database.manual.ManualDatabaseActivity;
 
 public class DatabaseListActivity extends Activity {
@@ -28,7 +26,7 @@ public class DatabaseListActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_all_lessons_list);
 
 		ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 

@@ -9,9 +9,8 @@
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
@@ -30,114 +29,152 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".AllLessonsActivity"
+            android:label="Lista przykładów" />
+
         <!-- Layouts -->
 
         <activity
             android:name=".layouts.LayoutListActivity"
-            android:label="Layouty" />
+            android:label="Layouty"
+            android:parentActivityName=".AllLessonsActivity" />
         <activity
             android:name=".layouts.LayoutExampleActivity"
-            android:label="Layout - Przykład z lekcji" />
+            android:label="Layout - Przykład z lekcji"
+            android:parentActivityName=".layouts.LayoutListActivity" />
         <activity
             android:name=".layouts.LayoutTrainingActivity"
-            android:label="Layout - Zadanie 1" />
+            android:label="Layout - Zadanie 1"
+            android:parentActivityName=".layouts.LayoutListActivity" />
         <activity
             android:name=".layouts.LayoutDependingOnOrientationActivity"
-            android:label="Wygląd w zależności od orientacji" />
+            android:label="Wygląd w zależności od orientacji"
+            android:parentActivityName=".layouts.LayoutListActivity" />
+
+        <!-- Intent -->
+        <activity
+            android:name=".intent.IntentListActivity"
+            android:label="Intent"
+            android:parentActivityName=".AllLessonsActivity" />
+        <activity
+            android:name=".intent.IntentExampleActivity"
+            android:label="Intent - Przykład"
+            android:parentActivityName=".intent.IntentListActivity" />
+        <activity
+            android:name=".intent.IntentHomeworkActivity"
+            android:label="Intent - Zadanie"
+            android:parentActivityName=".intent.IntentListActivity" />
 
         <!-- Listy (ListView) -->
         <activity
             android:name=".listview.ListExampleSelectionActivity"
-            android:label="Listy (ListView)" />
+            android:label="Listy (ListView)"
+            android:parentActivityName=".AllLessonsActivity" />
         <activity
             android:name=".listview.SimpleListActivity"
-            android:label="Prosta lista" />
+            android:label="Prosta lista"
+            android:parentActivityName=".listview.ListExampleSelectionActivity" />
         <activity
             android:name=".listview.CustomListActivity"
-            android:label="Lista niestandardowa" />
+            android:label="Lista niestandardowa"
+            android:parentActivityName=".listview.ListExampleSelectionActivity" />
         <activity
             android:name=".listview.AlternatelyItemColorListActivity"
-            android:label="Naprzemienne kolory" />
+            android:label="Naprzemienne kolory"
+            android:parentActivityName=".listview.ListExampleSelectionActivity" />
+
+
+        <!-- Shared Preferences -->
         <activity
             android:name=".sharedpreferences.SharedPreferencesActivity"
-            android:label="SharedPreferences" />
+            android:label="SharedPreferences"
+            android:parentActivityName=".AllLessonsActivity" />
 
         <!-- Dialog -->
         <activity
             android:name=".dialog.DialogActivity"
-            android:label="Dialogi" />
+            android:label="Dialogi"
+            android:parentActivityName=".AllLessonsActivity" />
 
         <!-- Fragmenty -->
         <activity
             android:name=".fragment.FragmentActivity"
-            android:label="@string/title_activity_fragment" />
-        <activity android:name=".fragment.AnimalDetailActivity"
-            android:label="Info" />
+            android:label="@string/title_activity_fragment"
+            android:parentActivityName=".AllLessonsActivity" />
+        <activity
+            android:name=".fragment.AnimalDetailActivity"
+            android:label="Info"
+            android:parentActivityName=".fragment.FragmentActivity" />
 
         <!-- Ustawienia (Preferences) -->
         <activity
             android:name=".preference.CurrentPreferencesActivity"
-            android:label="Aktualne ustawienia" />
+            android:label="Aktualne ustawienia"
+            android:parentActivityName=".AllLessonsActivity" />
         <activity
             android:name=".preference.PreferenceExampleActivity"
-            android:label="Zmiana ustawień" />
+            android:label="Zmiana ustawień"
+            android:parentActivityName=".preference.CurrentPreferencesActivity" />
         <activity
             android:name=".preference.HomeworkPreferenceActivity"
-            android:label="Zadanie" />
+            android:label="Zadanie"
+            android:parentActivityName=".preference.CurrentPreferencesActivity" />
 
         <!-- Camera -->
         <activity
             android:name=".camera.CameraSelectionActivity"
+            android:parentActivityName=".AllLessonsActivity"
             android:label="Obsługa aparatu" />
         <activity
             android:name=".camera.SimpleCameraActivity"
+            android:parentActivityName=".camera.CameraSelectionActivity"
             android:label="Uruchomienie aparatu" />
 
         <!-- File System -->
         <activity
             android:name=".filesystem.FileSystemListActivity"
+            android:parentActivityName=".AllLessonsActivity"
             android:label="System plików" />
         <activity
             android:name=".filesystem.FileSystemActivity"
+            android:parentActivityName=".filesystem.FileSystemListActivity"
             android:label="System plików" />
         <activity
             android:name=".filesystem.FileSystemHomeworkActivity"
+            android:parentActivityName=".filesystem.FileSystemListActivity"
             android:label="System plików" />
 
         <!-- AsyncTask -->
         <activity
             android:name=".asynctask.AsyncTaskListActivity"
+            android:parentActivityName=".AllLessonsActivity"
             android:label="AsyncTask" />
         <activity
             android:name=".asynctask.AsyncTaskExampleActivity"
+            android:parentActivityName=".asynctask.AsyncTaskListActivity"
             android:label="AsyncTask Lekcja" />
         <activity
             android:name=".asynctask.AsyncTaskTrainingActivity"
+            android:parentActivityName=".asynctask.AsyncTaskListActivity"
             android:label="AsyncTask Zadanie" />
-
-        <!-- Intent -->
-        <activity
-            android:name=".intent.IntentListActivity"
-            android:label="Intent" />
-        <activity
-            android:name=".intent.IntentExampleActivity"
-            android:label="Intent - Przykład" />
-        <activity
-            android:name=".intent.IntentHomeworkActivity"
-            android:label="Intent - Zadanie" />
 
         <!-- Database -->
         <activity
             android:name=".database.DatabaseListActivity"
+            android:parentActivityName=".AllLessonsActivity"
             android:label="Baza danych" />
         <activity
             android:name=".database.manual.ManualDatabaseActivity"
+            android:parentActivityName=".database.DatabaseListActivity"
             android:label="Baza danych - manualna obsługa" />
         <activity
             android:name=".database.manual.ManualDatabaseBookListActivity"
+            android:parentActivityName=".database.manual.ManualDatabaseActivity"
             android:label="Lista książek" />
         <activity
             android:name=".database.manual.ManualDatabaseUserListActivity"
+            android:parentActivityName=".database.manual.ManualDatabaseActivity"
             android:label="Lista użytkowników" />
         <activity
             android:name=".database.manual.ManualDatabaseUserActivity"

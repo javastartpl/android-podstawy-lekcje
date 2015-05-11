@@ -2,8 +2,10 @@ package pl.javastart.ap.dialog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -85,12 +88,21 @@ public class DialogActivity extends Activity {
 
 
     public void hourSelectionDialog(View view) {
-
+        final TimePickerDialog dialog = new TimePickerDialog(this, null, 10, 12, true);
+        dialog.setTitle("Wybierz czas");
+//        dialog.set
+        dialog.show();
     }
 
     public void dateSelectionDialog(View view) {
+        DatePickerDialog dialog = new DatePickerDialog(this, null, 2012, 0, 3);
+        dialog.setTitle("Select date");
+//        dialog.getDatePicker().getD
+        dialog.show();
     }
 
     public void hourAndHourSelectionDialog(View view) {
+        DateTimePickerDialogFragment fragment = new DateTimePickerDialogFragment();
+        fragment.show(getFragmentManager(), "dateTimePicker");
     }
 }
