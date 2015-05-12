@@ -1,6 +1,5 @@
 package pl.javastart.ap.fragment;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +16,7 @@ public class AnimalRepository {
         animalList.add(new Animal(R.drawable.elephant_image, "Słoń", "Słoń zjada do 225kg roślin dziennie i wypija do 130l wody na raz"));
     }
 
-
     public static List<Animal> getAnimalList() {
         return animalList;
-    }
-
-    public static void setAnimalList(List<Animal> animalList) {
-        AnimalRepository.animalList = animalList;
     }
 }
