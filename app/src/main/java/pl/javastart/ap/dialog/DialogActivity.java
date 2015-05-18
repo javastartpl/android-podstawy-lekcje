@@ -15,6 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,84 +26,55 @@ import pl.javastart.ap.R;
 import pl.javastart.ap.filesystem.FileSystemActivity;
 import pl.javastart.ap.filesystem.FileSystemHomeworkActivity;
 
-public class DialogActivity extends Activity {
+public class DialogActivity extends Activity implements DialogInterface.OnClickListener {
+
+    private TextView selectedOptionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog);
+        selectedOptionText = (TextView) findViewById(R.id.selected_option_text);
     }
 
     public void infoDialog(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Prosty dialog");
-        builder.setMessage("Tutaj treść dialogu");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "Naciśnięto: OK", Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "Naciśnięto: Anuluj", Toast.LENGTH_SHORT).show();
-            }
-        });
+        InfoDialogFragment infoDialogFragment = new InfoDialogFragment();
+        infoDialogFragment.show(getFragmentManager(), null);
+    }
 
-        builder.create().show();
+    @Override
+    public void onClick(DialogInterface dialogInterface, int which) {
+
+        switch (which) {
+            case DialogInterface.BUTTON_POSITIVE:
+                selectedOptionText.setText("OK");
+                break;
+            case DialogInterface.BUTTON_NEGATIVE:
+                selectedOptionText.setText("Anuluj");
+                break;
+        }
     }
 
     public void singleListElementDialog(View view) {
-        final String[] colors = {"Czerwony", "Zielony", "Niebieski"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Wybierz kolor");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "Wybrano kolor " + colors[which], Toast.LENGTH_SHORT).show();
-            }
-        });
-		builder.create().show();
+        SingleListElementDialogFragment singleListElementDialogFragment = new SingleListElementDialogFragment();
+        singleListElementDialogFragment.show(getFragmentManager(), null);
     }
 
 
     public void multipleListElementsDialog(View view) {
-        final String[] colors = {"Czerwony", "Zielony", "Niebieski"};
-        final boolean[] selected = {false, true, false};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Wybierz kolor");
-        builder.setMultiChoiceItems(colors, selected, new DialogInterface.OnMultiChoiceClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                String selected = (isChecked) ? "Zaznaczono" : "Odznaczono";
-                Toast.makeText(getApplicationContext(), selected + " kolor " + colors[which], Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setPositiveButton("OK", null);
-        builder.setNegativeButton("Anuluj", null);
-
-        builder.create().show();
+        MultipleListElementsDialogFragment multipleListElementsDialogFragment = new MultipleListElementsDialogFragment();
+        multipleListElementsDialogFragment.show(getFragmentManager(), null);
     }
 
 
     public void hourSelectionDialog(View view) {
-        final TimePickerDialog dialog = new TimePickerDialog(this, null, 10, 12, true);
-        dialog.setTitle("Wybierz czas");
-//        dialog.set
-        dialog.show();
+        TimePickerDialogFragment timePickerDialogFragment = new TimePickerDialogFragment();
+        timePickerDialogFragment.show(getFragmentManager(), null);
     }
 
     public void dateSelectionDialog(View view) {
-        DatePickerDialog dialog = new DatePickerDialog(this, null, 2012, 0, 3);
-        dialog.setTitle("Select date");
-//        dialog.getDatePicker().getD
-        dialog.show();
+        DatePickerDialogFragment datePickerDialogFragment = new DatePickerDialogFragment();
+        datePickerDialogFragment.show(getFragmentManager(), null);
     }
 
-    public void hourAndHourSelectionDialog(View view) {
-        DateTimePickerDialogFragment fragment = new DateTimePickerDialogFragment();
-        fragment.show(getFragmentManager(), "dateTimePicker");
-    }
 }

@@ -1,63 +1,82 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="pl.javastart.ap.intent.IntentExampleActivity">
 
     <Button
+        android:id="@+id/button10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Info dialog"
-        android:id="@+id/button10"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="infoDialog" />
+        android:layout_alignParentTop="true"
+        android:onClick="infoDialog"
+        android:text="Info dialog" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pojedynczy element z listy"
         android:id="@+id/button11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="singleListElementDialog"
-        android:layout_below="@+id/button10"
-        android:layout_centerHorizontal="true" />
+        android:text="Pojedynczy element z listy"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kilka elementów z listy"
         android:id="@+id/button12"
-        android:onClick="multipleListElementsDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/button11"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="multipleListElementsDialog"
+        android:text="Kilka elementów z listy" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Godzina"
         android:id="@+id/button13"
-        android:onClick="hourSelectionDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/button12"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="hourSelectionDialog"
+        android:text="Godzina" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Data"
         android:id="@+id/button14"
-        android:onClick="dateSelectionDialog"
-        android:layout_below="@+id/button13"
-        android:layout_centerHorizontal="true" />
-
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data i godzina"
-        android:id="@+id/button15"
-        android:onClick="hourAndHourSelectionDialog"
-        android:layout_below="@+id/button14"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/button13"
+        android:layout_centerHorizontal="true"
+        android:onClick="dateSelectionDialog"
+        android:text="Data" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@+id/button10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Wybrana opcja:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/selected_option_text"
+            android:text="Żadna" />
+    </LinearLayout>
+
 </RelativeLayout>
