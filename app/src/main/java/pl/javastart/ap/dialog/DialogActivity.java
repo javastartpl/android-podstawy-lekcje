@@ -77,4 +77,9 @@ public class DialogActivity extends Activity implements DialogInterface.OnClickL
         datePickerDialogFragment.show(getFragmentManager(), null);
     }
 
+
+    public void customDialog(View view) {
+        CustomDialogFragment customDialogFragment = new CustomDialogFragment();
+        customDialogFragment.show(getFragmentManager(), null);
+    }
 }
