@@ -178,10 +178,12 @@
             android:label="Lista użytkowników" />
         <activity
             android:name=".database.manual.ManualDatabaseUserActivity"
+            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity"
             android:label="Użytkownik" />
         <activity
             android:name=".database.manual.ManualLoanActivity"
-            android:label="@string/title_activity_manual_loan" />
+            android:parentActivityName=".database.manual.ManualDatabaseUserActivity"
+            android:label="Wypożyczenie" />
 
 
     </application>
