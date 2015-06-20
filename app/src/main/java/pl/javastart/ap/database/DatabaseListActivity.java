@@ -14,13 +14,13 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import pl.javastart.ap.database.manual.ManualDatabaseActivity;
+import pl.javastart.ap.database.manual.ManualDatabaseUserListActivity;
 
 public class DatabaseListActivity extends Activity {
 	
 	private List<Lesson> lessons = new ArrayList<>(2);
 	{
-		lessons.add(new Lesson("Manualna obsługa", ManualDatabaseActivity.class));
+		lessons.add(new Lesson("Manualna obsługa", ManualDatabaseUserListActivity.class));
 	}
 
 	@Override

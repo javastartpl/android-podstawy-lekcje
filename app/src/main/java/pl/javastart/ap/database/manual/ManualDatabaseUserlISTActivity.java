@@ -1,6 +1,7 @@
 package pl.javastart.ap.database.manual;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import pl.javastart.ap.R;
 import pl.javastart.ap.database.manual.model.User;
+import pl.javastart.ap.database.manual.model.UserRepository;
 
 public class ManualDatabaseUserListActivity extends Activity {
 
@@ -27,7 +29,7 @@ public class ManualDatabaseUserListActivity extends Activity {
     private EditText nameEditText;
     private EditText surnameEditText;
     private ListView userListView;
-    private UserListAdapter userListAdapter;
+    private ManualUserAdapter userListAdapter;
 
     private List<User> userList = new ArrayList<>();
 
@@ -50,7 +52,7 @@ public class ManualDatabaseUserListActivity extends Activity {
 
         addActionForUserAddButton(addUserButton);
 
-        userListAdapter = new UserListAdapter();
+        userListAdapter = new ManualUserAdapter();
         updateUserList();
         userListView.setAdapter(userListAdapter);
 
@@ -58,7 +60,7 @@ public class ManualDatabaseUserListActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ManualDatabaseUserListActivity.this, ManualDatabaseUserActivity.class);
-                intent.putExtra("id", id);
+                intent.putExtra(ManualDatabaseUserActivity.PARAM_USER_ID, id);
                 startActivity(intent);
             }
         });
@@ -75,6 +77,8 @@ public class ManualDatabaseUserListActivity extends Activity {
             @Override
             public void onClick(View v) {
                 addUser();
+                nameEditText.setText("");
+                surnameEditText.setText("");
             }
         });
     }
@@ -91,23 +95,14 @@ public class ManualDatabaseUserListActivity extends Activity {
     }
 
     private void updateUserList() {
-        userList.clear();
-
-        SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from user", null);
-
-        while (cursor.moveToNext()) {
-            User user = new User();
-            user.setId(cursor.getInt(0));
-            user.setName(cursor.getString(1));
-            user.setSurname(cursor.getString(2));
-            userList.add(user);
-        }
-
+        userList = UserRepository.findAll(this);
+        userListAdapter.setUserList(userList);
         userListAdapter.notifyDataSetChanged();
     }
 
-    private class UserListAdapter extends BaseAdapter {
+    public class ManualUserAdapter extends BaseAdapter {
+
+        private List<User> userList;
 
         @Override
         public int getCount() {
@@ -137,6 +132,10 @@ public class ManualDatabaseUserListActivity extends Activity {
             text.setText(user.getId() + ". " + user.getName() + " " + user.getSurname());
 
             return convertView;
+        }
+
+        public void setUserList(List<User> userList) {
+            this.userList = userList;
         }
     }
 

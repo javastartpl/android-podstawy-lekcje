@@ -3,6 +3,7 @@ package pl.javastart.ap;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.javastart.ap.actionbar.ActionBarActivity;
 import pl.javastart.ap.asynctask.AsyncTaskListActivity;
 import pl.javastart.ap.camera.CameraSelectionActivity;
 import pl.javastart.ap.database.DatabaseListActivity;
@@ -13,6 +14,7 @@ import pl.javastart.ap.fragment.FragmentActivity;
 import pl.javastart.ap.intent.IntentListActivity;
 import pl.javastart.ap.layouts.LayoutListActivity;
 import pl.javastart.ap.listview.ListExampleSelectionActivity;
+import pl.javastart.ap.maps.MapsActivity;
 import pl.javastart.ap.preference.CurrentPreferencesActivity;
 import pl.javastart.ap.sharedpreferences.SharedPreferencesActivity;
 import android.app.Activity;
@@ -33,13 +35,14 @@ public class AllLessonsActivity extends Activity {
 		lessons.add(new Lesson("Listy (ListView)", ListExampleSelectionActivity.class));
 		lessons.add(new Lesson("Dialogi", DialogActivity.class));
 		lessons.add(new Lesson("Fragmenty", FragmentActivity.class));
+		lessons.add(new Lesson("Action Bar", ActionBarActivity.class));
 		lessons.add(new Lesson("SharedPreferences", SharedPreferencesActivity.class));
 		lessons.add(new Lesson("Ustawienia (Preferences)", CurrentPreferencesActivity.class));
 		lessons.add(new Lesson("System plików", FileSystemListActivity.class));
-		lessons.add(new Lesson("Obsługa aparatu", CameraSelectionActivity.class));
-		lessons.add(new Lesson("System plików", FileSystemListActivity.class));
 		lessons.add(new Lesson("AsyncTask", AsyncTaskListActivity.class));
-        lessons.add(new Lesson("Baza danych", DatabaseListActivity.class));
+        lessons.add(new Lesson("Bazy danych", DatabaseListActivity.class));
+		lessons.add(new Lesson("Obsługa aparatu", CameraSelectionActivity.class));
+		lessons.add(new Lesson("Google Maps", MapsActivity.class));
 	}
 
 	@Override

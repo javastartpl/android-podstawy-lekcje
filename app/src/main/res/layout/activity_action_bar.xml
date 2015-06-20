@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ukryj/Pokaż ActionBar"
+        android:onClick="toogleActionBarVisibilityButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toggleTitleButton"
+        android:text="Ukryj/pokaż tytuł" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Włącz tryb akcji"
+        android:onClick="startActionModeButton"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ukryj/Pokaż przycisk wstecz"
+        android:onClick="toggleHomeButton"/>
+
+</LinearLayout>
