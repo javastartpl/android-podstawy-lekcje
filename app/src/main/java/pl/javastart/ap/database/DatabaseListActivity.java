@@ -14,32 +14,37 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
+import pl.javastart.ap.database.greendao.GreenDaoDatabaseUserListActivity;
 import pl.javastart.ap.database.manual.ManualDatabaseUserListActivity;
+import pl.javastart.ap.database.ormlite.OrmLiteDatabaseUserListActivity;
 
 public class DatabaseListActivity extends Activity {
-	
-	private List<Lesson> lessons = new ArrayList<>(2);
-	{
-		lessons.add(new Lesson("Manualna obsługa", ManualDatabaseUserListActivity.class));
-	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_all_lessons_list);
+    private List<Lesson> lessons = new ArrayList<>(2);
 
-		ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
+    {
+        lessons.add(new Lesson("Manualna obsługa", ManualDatabaseUserListActivity.class));
+        lessons.add(new Lesson("OrmLite", OrmLiteDatabaseUserListActivity.class));
+        lessons.add(new Lesson("GreenDao", GreenDaoDatabaseUserListActivity.class));
+    }
 
-		lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_all_lessons_list);
 
-		lessonsList.setOnItemClickListener(new OnItemClickListener() {
+        ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(getApplicationContext(), lessons.get(position).getActivity());
-				startActivity(intent);
-			}
-		});
-	}
+        lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
+
+        lessonsList.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), lessons.get(position).getActivity());
+                startActivity(intent);
+            }
+        });
+    }
 
 }

@@ -1,4 +1,4 @@
-package pl.javastart.ap.database.manual;
+package pl.javastart.ap.database.ormlite;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.javastart.ap.R;
-import pl.javastart.ap.database.manual.model.User;
-import pl.javastart.ap.database.manual.model.ManualUserRepository;
+import pl.javastart.ap.database.ormlite.model.OrmLiteUserRepository;
+import pl.javastart.ap.database.ormlite.model.User;
 
-public class ManualDatabaseUserListActivity extends Activity {
+public class OrmLiteDatabaseUserListActivity extends Activity {
 
     private Button addUserButton;
     private EditText nameEditText;
@@ -31,16 +31,16 @@ public class ManualDatabaseUserListActivity extends Activity {
 
     private List<User> userList = new ArrayList<>();
 
-    private ManualDatabaseHelper databaseHelper;
+    private OrmLiteDatabaseHelper databaseHelper;
 
-    public ManualDatabaseUserListActivity() {
+    public OrmLiteDatabaseUserListActivity() {
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_user_list);
-        databaseHelper = ManualDatabaseHelper.getInstance(getApplicationContext());
+        databaseHelper = OrmLiteDatabaseHelper.getInstance(getApplicationContext());
 
 
         nameEditText = (EditText) findViewById(R.id.name);
@@ -57,8 +57,8 @@ public class ManualDatabaseUserListActivity extends Activity {
         userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ManualDatabaseUserListActivity.this, ManualDatabaseUserActivity.class);
-                intent.putExtra(ManualDatabaseUserActivity.PARAM_USER_ID, id);
+                Intent intent = new Intent(OrmLiteDatabaseUserListActivity.this, OrmLiteDatabaseUserActivity.class);
+                intent.putExtra(OrmLiteDatabaseUserActivity.PARAM_USER_ID, id);
                 startActivity(intent);
             }
         });
@@ -75,7 +75,7 @@ public class ManualDatabaseUserListActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (nameEditText.getText().toString().isEmpty() || surnameEditText.getText().toString().isEmpty()) {
-                    Toast.makeText(ManualDatabaseUserListActivity.this, "Uzupełnij obydwa pola!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrmLiteDatabaseUserListActivity.this, "Uzupełnij obydwa pola!", Toast.LENGTH_SHORT).show();
                 } else {
                     addUser();
                     nameEditText.setText("");
@@ -89,13 +89,13 @@ public class ManualDatabaseUserListActivity extends Activity {
         User user = new User();
         user.setName(nameEditText.getText().toString());
         user.setSurname(surnameEditText.getText().toString());
-        ManualUserRepository.addUser(ManualDatabaseUserListActivity.this, user);
+        OrmLiteUserRepository.addUser(OrmLiteDatabaseUserListActivity.this, user);
 
         updateUserList();
     }
 
     private void updateUserList() {
-        userList = ManualUserRepository.findAll(this);
+        userList = OrmLiteUserRepository.findAll(this);
         userListAdapter.setUserList(userList);
         userListAdapter.notifyDataSetChanged();
     }
@@ -123,7 +123,7 @@ public class ManualDatabaseUserListActivity extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
-                LayoutInflater inflater = LayoutInflater.from(ManualDatabaseUserListActivity.this);
+                LayoutInflater inflater = LayoutInflater.from(OrmLiteDatabaseUserListActivity.this);
                 convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
             }
 

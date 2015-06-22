@@ -1,17 +1,25 @@
-package pl.javastart.ap.database.manual.model;
+package pl.javastart.ap.database.ormlite.model;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "user")
 public class User {
 
+    @DatabaseField(generatedId = true)
     private long id;
+
+    @DatabaseField
     private String name;
+
+    @DatabaseField
     private String surname;
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -29,10 +37,5 @@ public class User {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    @Override
-    public String toString() {
-        return name + " " + surname;
     }
 }

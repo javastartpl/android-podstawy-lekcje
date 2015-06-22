@@ -1,4 +1,4 @@
-package pl.javastart.ap.database.manual;
+package pl.javastart.ap.database.greendao;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import pl.javastart.ap.R;
-import pl.javastart.ap.database.manual.model.User;
-import pl.javastart.ap.database.manual.model.ManualUserRepository;
+import pl.javastart.ap.database.greendao.database.User;
 
-public class ManualDatabaseUserActivity extends Activity {
+public class GreenDaoDatabaseUserActivity extends Activity {
 
     public static final String PARAM_USER_ID = "param.user.id";
     private static final int INVALID_ID = -100;
@@ -39,7 +38,7 @@ public class ManualDatabaseUserActivity extends Activity {
             public void onClick(View v) {
                 user.setName(nameEditText.getText().toString());
                 user.setSurname(surnameEditText.getText().toString());
-                ManualUserRepository.updateUser(ManualDatabaseUserActivity.this, user);
+                GreenDaoUserRepository.updateUser(GreenDaoDatabaseUserActivity.this, user);
                 finish();
             }
         });
@@ -50,7 +49,7 @@ public class ManualDatabaseUserActivity extends Activity {
             finish();
         }
 
-        user = ManualUserRepository.findById(this, id);
+        user = GreenDaoUserRepository.findById(this, id);
 
         nameEditText.setText(user.getName());
         surnameEditText.setText(user.getSurname());
@@ -66,7 +65,7 @@ public class ManualDatabaseUserActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_delete_user) {
-            ManualUserRepository.deleteUser(ManualDatabaseUserActivity.this, user);
+            GreenDaoUserRepository.deleteUser(GreenDaoDatabaseUserActivity.this, user);
             finish();
         }
         return super.onOptionsItemSelected(item);

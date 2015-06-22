@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.javastart.ap"
-    android:versionCode="1"
-    android:versionName="1.0">
-
-    <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="21" />
+    package="pl.javastart.ap">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -182,6 +176,8 @@
             android:name=".database.DatabaseListActivity"
             android:label="Baza danych"
             android:parentActivityName=".AllLessonsActivity" />
+
+        <!-- Database manual -->
         <activity
             android:name=".database.manual.ManualDatabaseUserListActivity"
             android:label="Lista użytkowników"
@@ -190,6 +186,27 @@
             android:name=".database.manual.ManualDatabaseUserActivity"
             android:label="Użytkownik"
             android:parentActivityName=".database.manual.ManualDatabaseUserListActivity" />
+
+        <!-- Database OrmLite -->
+        <activity
+            android:name=".database.ormlite.OrmLiteDatabaseUserListActivity"
+            android:label="Lista użytkowników"
+            android:parentActivityName=".database.DatabaseListActivity" />
+        <activity
+            android:name=".database.ormlite.OrmLiteDatabaseUserActivity"
+            android:label="Użytkownik"
+            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity" />
+
+        <!-- Database GreenDao -->
+        <activity
+            android:name=".database.greendao.GreenDaoDatabaseUserListActivity"
+            android:label="Lista użytkowników"
+            android:parentActivityName=".database.DatabaseListActivity" />
+        <activity
+            android:name=".database.greendao.GreenDaoDatabaseUserActivity"
+            android:label="Użytkownik"
+            android:parentActivityName=".database.greendao.GreenDaoDatabaseUserListActivity" />
+
 
         <!-- Action Bar -->
         <activity
