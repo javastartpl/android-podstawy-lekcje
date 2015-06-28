@@ -1,0 +1,17 @@
+# --table-start--
+dataClass=pl.javastart.ap.database.ormlite.model.User
+tableName=user
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=surname
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
