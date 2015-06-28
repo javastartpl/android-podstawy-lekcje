@@ -1,9 +1,10 @@
 package pl.javastart.daogenerator;
 
+import de.greenrobot.daogenerator.DaoGenerator;
 import de.greenrobot.daogenerator.Entity;
 import de.greenrobot.daogenerator.Schema;
 
-public class DaoGenerator {
+public class MyDaoGenerator {
 
     private static final String PACKAGE = "pl.javastart.ap.database.greendao.database";
 
@@ -16,7 +17,6 @@ public class DaoGenerator {
         user.addStringProperty("name");
         user.addStringProperty("surname");
 
-//        new de.greenrobot.daogenerator.DaoGenerator().generateAll(schema, args[0] + TARGET_PACKAGE);
-        new de.greenrobot.daogenerator.DaoGenerator().generateAll(schema, args[0]);
+        new DaoGenerator().generateAll(schema, args[0]);
     }
 }

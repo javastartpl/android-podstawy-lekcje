@@ -1,30 +1,12 @@
 package pl.javastart.ap.dialog;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.TimePickerDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import pl.javastart.ap.filesystem.FileSystemActivity;
-import pl.javastart.ap.filesystem.FileSystemHomeworkActivity;
 
 public class DialogActivity extends Activity implements DialogInterface.OnClickListener {
 

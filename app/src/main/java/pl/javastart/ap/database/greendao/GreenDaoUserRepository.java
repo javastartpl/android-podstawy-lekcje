@@ -12,6 +12,14 @@ import pl.javastart.ap.database.greendao.database.UserDao;
 
 public class GreenDaoUserRepository {
 
+    private static UserDao getUserDao(Context context) {
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(context, "ormlite.db", null);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        DaoMaster daoMaster = new DaoMaster(db);
+        DaoSession daoSession = daoMaster.newSession();
+        return daoSession.getUserDao();
+    }
+
     public static List<User> findAll(Context context) {
         return getUserDao(context).loadAll();
     }
@@ -30,13 +38,5 @@ public class GreenDaoUserRepository {
 
     public static void deleteUser(Context context, User user) {
         getUserDao(context).delete(user);
-    }
-
-    private static UserDao getUserDao(Context context) {
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(context, "ormlite.db", null);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        DaoMaster daoMaster = new DaoMaster(db);
-        DaoSession daoSession = daoMaster.newSession();
-        return daoSession.getUserDao();
     }
 }

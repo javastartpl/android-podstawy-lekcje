@@ -1,10 +1,5 @@
 package pl.javastart.ap.camera;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import pl.javastart.ap.Lesson;
-import pl.javastart.ap.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,30 +9,37 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import pl.javastart.ap.Lesson;
+import pl.javastart.ap.R;
+
 public class CameraSelectionActivity extends Activity {
-	
-	private List<Lesson> lessons = new ArrayList<>(2);
-	{
-		lessons.add(0, new Lesson("Uruchomienie aparatu", SimpleCameraActivity.class));
-	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_all_lessons_list);
+    private List<Lesson> lessons = new ArrayList<>(2);
 
-		ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
+    {
+        lessons.add(0, new Lesson("Pobranie zdjęcia z aparatu", SimpleCameraActivity.class));
+    }
 
-		lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_all_lessons_list);
 
-		lessonsList.setOnItemClickListener(new OnItemClickListener() {
+        ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(getApplicationContext(), lessons.get(position).getActivity());
-				startActivity(intent);
-			}
-		});
-	}
+        lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
+
+        lessonsList.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), lessons.get(position).getActivity());
+                startActivity(intent);
+            }
+        });
+    }
 
 }

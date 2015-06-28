@@ -2,12 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/b2"
+        android:id="@+id/makePhotoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="makePhotoButtonPressed"
         android:text="Zrób zdjęcie" />
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:src="@drawable/javastart_big_black" />
 
 </LinearLayout>

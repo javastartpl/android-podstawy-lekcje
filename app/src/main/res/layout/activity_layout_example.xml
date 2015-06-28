@@ -14,7 +14,7 @@
         android:text="MID" />
 
     <Button
-        android:id="@+id/b2"
+        android:id="@+id/makePhotoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/b1"
