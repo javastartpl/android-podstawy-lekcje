@@ -179,13 +179,13 @@
 
         <!-- Database manual -->
         <activity
-            android:name=".database.manual.ManualDatabaseUserListActivity"
+            android:name=".database.manual.ManualDatabaseUserListActivity2"
             android:label="Lista użytkowników"
             android:parentActivityName=".database.DatabaseListActivity" />
         <activity
             android:name=".database.manual.ManualDatabaseUserActivity"
             android:label="Użytkownik"
-            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity" />
+            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity2" />
 
         <!-- Database OrmLite -->
         <activity
@@ -195,7 +195,7 @@
         <activity
             android:name=".database.ormlite.OrmLiteDatabaseUserActivity"
             android:label="Użytkownik"
-            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity" />
+            android:parentActivityName=".database.manual.ManualDatabaseUserListActivity2" />
 
         <!-- Database GreenDao -->
         <activity

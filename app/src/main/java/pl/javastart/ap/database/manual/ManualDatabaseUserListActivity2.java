@@ -21,7 +21,7 @@ import pl.javastart.ap.R;
 import pl.javastart.ap.database.manual.model.User;
 import pl.javastart.ap.database.manual.model.ManualUserRepository;
 
-public class ManualDatabaseUserListActivity extends Activity {
+public class ManualDatabaseUserListActivity2 extends Activity {
 
     private Button addUserButton;
     private EditText nameEditText;
@@ -31,17 +31,13 @@ public class ManualDatabaseUserListActivity extends Activity {
 
     private List<User> userList = new ArrayList<>();
 
-    private ManualDatabaseHelper databaseHelper;
-
-    public ManualDatabaseUserListActivity() {
+    public ManualDatabaseUserListActivity2() {
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_user_list);
-        databaseHelper = ManualDatabaseHelper.getInstance(getApplicationContext());
-
 
         nameEditText = (EditText) findViewById(R.id.name);
         surnameEditText = (EditText) findViewById(R.id.surname);
@@ -57,7 +53,7 @@ public class ManualDatabaseUserListActivity extends Activity {
         userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ManualDatabaseUserListActivity.this, ManualDatabaseUserActivity.class);
+                Intent intent = new Intent(ManualDatabaseUserListActivity2.this, ManualDatabaseUserActivity.class);
                 intent.putExtra(ManualDatabaseUserActivity.PARAM_USER_ID, id);
                 startActivity(intent);
             }
@@ -75,7 +71,7 @@ public class ManualDatabaseUserListActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (nameEditText.getText().toString().isEmpty() || surnameEditText.getText().toString().isEmpty()) {
-                    Toast.makeText(ManualDatabaseUserListActivity.this, "Uzupełnij obydwa pola!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManualDatabaseUserListActivity2.this, "Uzupełnij obydwa pola!", Toast.LENGTH_SHORT).show();
                 } else {
                     addUser();
                     nameEditText.setText("");
@@ -89,7 +85,7 @@ public class ManualDatabaseUserListActivity extends Activity {
         User user = new User();
         user.setName(nameEditText.getText().toString());
         user.setSurname(surnameEditText.getText().toString());
-        ManualUserRepository.addUser(ManualDatabaseUserListActivity.this, user);
+        ManualUserRepository.addUser(ManualDatabaseUserListActivity2.this, user);
 
         updateUserList();
     }
@@ -123,7 +119,7 @@ public class ManualDatabaseUserListActivity extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
-                LayoutInflater inflater = LayoutInflater.from(ManualDatabaseUserListActivity.this);
+                LayoutInflater inflater = LayoutInflater.from(ManualDatabaseUserListActivity2.this);
                 convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
             }
 
