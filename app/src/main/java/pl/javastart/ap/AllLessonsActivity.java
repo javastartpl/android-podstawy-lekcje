@@ -17,6 +17,8 @@ import pl.javastart.ap.listview.ListExampleSelectionActivity;
 import pl.javastart.ap.maps.MapsActivity;
 import pl.javastart.ap.preference.CurrentPreferencesActivity;
 import pl.javastart.ap.sharedpreferences.SharedPreferencesActivity;
+import pl.javastart.ap.webclient.WebclientActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,6 +45,7 @@ public class AllLessonsActivity extends Activity {
         lessons.add(new Lesson("Bazy danych", DatabaseListActivity.class));
 		lessons.add(new Lesson("Obsługa aparatu", CameraSelectionActivity.class));
 		lessons.add(new Lesson("Google Maps", MapsActivity.class));
+		lessons.add(new Lesson("Komunikacja z serwerem", WebclientActivity.class));
 	}
 
 	@Override

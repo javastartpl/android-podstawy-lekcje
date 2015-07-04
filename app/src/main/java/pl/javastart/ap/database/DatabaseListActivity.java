@@ -15,7 +15,7 @@ import java.util.List;
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
 import pl.javastart.ap.database.greendao.GreenDaoDatabaseUserListActivity;
-import pl.javastart.ap.database.manual.ManualDatabaseUserListActivity2;
+import pl.javastart.ap.database.manual.ManualDatabaseUserListActivity;
 import pl.javastart.ap.database.ormlite.OrmLiteDatabaseUserListActivity;
 
 public class DatabaseListActivity extends Activity {
@@ -23,7 +23,7 @@ public class DatabaseListActivity extends Activity {
     private List<Lesson> lessons = new ArrayList<>(2);
 
     {
-        lessons.add(new Lesson("Manualna obsługa", ManualDatabaseUserListActivity2.class));
+        lessons.add(new Lesson("Manualna obsługa", ManualDatabaseUserListActivity.class));
         lessons.add(new Lesson("OrmLite", OrmLiteDatabaseUserListActivity.class));
         lessons.add(new Lesson("GreenDao", GreenDaoDatabaseUserListActivity.class));
     }
