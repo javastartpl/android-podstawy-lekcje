@@ -8,13 +8,12 @@ import android.widget.TextView;
 
 import pl.javastart.ap.R;
 
-public class WebclientActivity extends Activity {
+public class WebclientActivity extends Activity implements NewCategoryCallback {
 
     private TextView log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getActionBar().setDisplayShowTitleEnabled(false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webclient);
         log = (TextView) findViewById(R.id.log);
@@ -28,7 +27,7 @@ public class WebclientActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.add) {
+        if (item.getItemId() == R.id.add) {
             addNewCategoryPressed();
             return true;
         }
@@ -39,5 +38,10 @@ public class WebclientActivity extends Activity {
     private void addNewCategoryPressed() {
         NewCategoryFragment fragment = new NewCategoryFragment();
         fragment.show(getFragmentManager(), "newCategoryFragment");
+    }
+
+    @Override
+    public void newCategoryAdded(String name) {
+        new AddNewCategoryAsyncTask(log).execute();
     }
 }
