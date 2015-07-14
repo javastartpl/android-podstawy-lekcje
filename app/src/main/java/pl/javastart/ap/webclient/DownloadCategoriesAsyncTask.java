@@ -14,17 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AddNewCategoryAsyncTask extends AsyncTask<String, Void, List<Category>> {
+public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<Category>> {
 
     private TextView log;
+    private FinishedDownloadingCatetegoriesCallback callback;
 
-    public AddNewCategoryAsyncTask(TextView log) {
+    public DownloadCategoriesAsyncTask(FinishedDownloadingCatetegoriesCallback callback, TextView log) {
+        this.callback = callback;
         this.log = log;
     }
 
     @Override
     protected List<Category> doInBackground(String... params) {
         InputStream response = request("https://webservice-javastartpl.rhcloud.com/categories");
+        publishProgress("Pobrano dane, rozpoczęcie parsowania JSON");
         try {
             return readJsonStream(response);
         } catch (IOException e) {
@@ -33,13 +36,24 @@ public class AddNewCategoryAsyncTask extends AsyncTask<String, Void, List<Catego
         return null;
     }
 
+    @Override
+    protected void onProgressUpdate(String... values) {
+        super.onProgressUpdate(values);
+        Util.appendToLog(log, values[0]);
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        Util.appendToLog(log, "Rozpoczęcie połączenia");
+    }
 
     @Override
     protected void onPostExecute(List<Category> categories) {
         for (Category category : categories) {
-            log.append(category.getName());
-            log.append("\n");
+            Util.appendToLog(log, "Pobrano kategorię: " + category.getName());
         }
+        callback.onFinishedDownloadingCategories(categories);
     }
 
     private InputStream request(String urlString) {
@@ -56,12 +70,10 @@ public class AddNewCategoryAsyncTask extends AsyncTask<String, Void, List<Catego
 
 
         } catch (IOException e) {
-            // writing exception to log
             e.printStackTrace();
         }
 
         return null;
-
     }
 
 //    private StringBuffer request(String urlString) {
@@ -91,7 +103,7 @@ public class AddNewCategoryAsyncTask extends AsyncTask<String, Void, List<Catego
 //        return chaine;
 //    }
 
-    public List readJsonStream(InputStream in) throws IOException {
+    public List<Category> readJsonStream(InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         try {
             return readCategoryArray(reader);
@@ -101,7 +113,7 @@ public class AddNewCategoryAsyncTask extends AsyncTask<String, Void, List<Catego
     }
 
     private List<Category> readCategoryArray(JsonReader reader) throws IOException {
-        List categories = new ArrayList();
+        List<Category> categories = new ArrayList<>();
         reader.beginObject();
         skipLinks(reader);
 

@@ -8,7 +8,7 @@
         android:title="Dodaj" />
 
     <item
-        android:id="@+id/menu_example_one"
+        android:id="@+id/refresh"
         android:icon="@drawable/ic_menu_refresh"
         android:title="Odśwież"
         android:showAsAction="ifRoom" />

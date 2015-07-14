@@ -23,7 +23,7 @@ public class NewCategoryFragment extends DialogFragment {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                callback.newCategoryAdded(input.getText().toString());
+                callback.newCategoryAddButtonPressed(input.getText().toString());
             }
         });
         builder.setNegativeButton("Anuluj", null);
