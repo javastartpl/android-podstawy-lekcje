@@ -2,7 +2,6 @@ package pl.javastart.ap.webclient;
 
 import android.os.AsyncTask;
 import android.util.JsonReader;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -76,33 +75,6 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
         return null;
     }
 
-//    private StringBuffer request(String urlString) {
-//        StringBuffer chaine = new StringBuffer("");
-//        try {
-//            URL url = new URL(urlString);
-//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//            connection.setRequestProperty("User-Agent", "");
-//            connection.setDoOutput(false);
-//            connection.setRequestMethod("GET");
-//            connection.setDoInput(true);
-//            connection.connect();
-//
-//            InputStream inputStream = connection.getInputStream();
-//
-//            BufferedReader rd = new BufferedReader(new InputStreamReader(inputStream));
-//            String line = "";
-//            while ((line = rd.readLine()) != null) {
-//                chaine.append(line);
-//            }
-//
-//        } catch (IOException e) {
-//            // writing exception to log
-//            e.printStackTrace();
-//        }
-//
-//        return chaine;
-//    }
-
     public List<Category> readJsonStream(InputStream in) throws IOException {
         JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
         try {
@@ -114,46 +86,34 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
 
     private List<Category> readCategoryArray(JsonReader reader) throws IOException {
         List<Category> categories = new ArrayList<>();
-        reader.beginObject();
-        skipLinks(reader);
-
-        reader.nextName();
-        reader.beginObject();
-        reader.nextName();
         reader.beginArray();
+
         while (reader.hasNext()) {
             categories.add(readCategory(reader));
         }
         reader.endArray();
 
-        reader.endObject();
         return categories;
     }
 
     private Category readCategory(JsonReader reader) throws IOException {
-        String categoryName = null;
+        Category category = new Category();
 
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
-            if (name.equals("name")) {
-                categoryName = reader.nextString();
-                Log.d("category", categoryName);
+            switch (name) {
+                case "id":
+                    category.setId(reader.nextLong());
+                    break;
+                case "name":
+                    category.setName(reader.nextString());
+                    break;
+                default:
+                    break; // ignore
             }
-            skipLinks(reader);
         }
         reader.endObject();
-        return new Category(categoryName);
-    }
-
-    private void skipLinks(JsonReader reader) throws IOException {
-        reader.nextName();
-        reader.beginObject();
-        reader.nextName();
-        reader.beginObject();
-        reader.nextName();
-        reader.nextString();
-        reader.endObject();
-        reader.endObject();
+        return category;
     }
 }

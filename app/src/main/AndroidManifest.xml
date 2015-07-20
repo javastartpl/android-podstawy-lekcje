@@ -225,7 +225,6 @@
             android:label="Webclient"
             android:parentActivityName=".AllLessonsActivity" />
 
-
     </application>
 
 </manifest>

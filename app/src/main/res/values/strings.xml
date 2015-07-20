@@ -10,5 +10,6 @@
     <string name="type">Typ</string>
     <string name="add">Dodaj</string>
     <string name="delete">Usuń</string>
+    <string name="refresh">Odśwież</string>
 
 </resources>

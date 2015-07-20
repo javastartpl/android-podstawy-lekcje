@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -12,6 +11,10 @@ import android.widget.TextView;
 import java.util.List;
 
 import pl.javastart.ap.R;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class WebclientActivity extends Activity implements NewCategoryCallback, FinishedDownloadingCatetegoriesCallback {
 
@@ -42,7 +45,7 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
             return true;
         }
 
-        if(item.getItemId() == R.id.refresh) {
+        if (item.getItemId() == R.id.refresh) {
             refreshCategories();
             return true;
         }
@@ -50,8 +53,32 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
         return super.onOptionsItemSelected(item);
     }
 
+    private void refreshCategoriesRetrofit() {
+        Util.appendToLog(log, "Pobieranie danych za pomocą Retrofit");
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("https://webservice-javastartpl.rhcloud.com/")
+                .build();
+
+        CategoryRetrofitService categoryService = restAdapter.create(CategoryRetrofitService.class);
+
+        categoryService.getAll(new Callback<List<Category>>() {
+            @Override
+            public void success(List<Category> categories, Response response) {
+                Util.appendToLog(log, "Pobrano. Odświeżanie spinnera...");
+                onFinishedDownloadingCategories(categories);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                // ignore
+            }
+        });
+    }
+
     private void refreshCategories() {
-        new DownloadCategoriesAsyncTask(this, log).execute();
+        refreshCategoriesRetrofit();
+        // old fasion way
+        // new DownloadCategoriesAsyncTask(this, log).execute();
     }
 
 
@@ -71,5 +98,6 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
         categoryAdapter.clear();
         categoryAdapter.addAll(categories);
         categorySpinner.invalidate();
+        Util.appendToLog(log, "Spinner odźwieżony.");
     }
 }
