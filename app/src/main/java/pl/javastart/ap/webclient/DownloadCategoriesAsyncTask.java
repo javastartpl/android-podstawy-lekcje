@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit.RestAdapter;
+
 
 public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<Category>> {
 
@@ -25,6 +27,11 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
 
     @Override
     protected List<Category> doInBackground(String... params) {
+//        return getWithAndroidWay();
+        return getWithRetrofit();
+    }
+
+    private List<Category> getWithAndroidWay() {
         InputStream response = request("https://webservice-javastartpl.rhcloud.com/categories");
         publishProgress("Pobrano dane, rozpoczęcie parsowania JSON");
         try {
@@ -34,6 +41,16 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
         }
         return null;
     }
+
+    private List<Category> getWithRetrofit() {
+        RestAdapter adapter = new RestAdapter.Builder()
+                .setEndpoint("https://webservice-javastartpl.rhcloud.com")
+                .build();
+        WebService service = adapter.create(WebService.class);
+
+        return service.getAllCategories();
+    }
+
 
     @Override
     protected void onProgressUpdate(String... values) {

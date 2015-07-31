@@ -4,12 +4,12 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
         classpath 'com.github.stephanenicolas.ormgap:ormgap-plugin:1.0.7'
     }
 }
 apply plugin: 'com.android.application'
 apply plugin: 'ormgap'
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
