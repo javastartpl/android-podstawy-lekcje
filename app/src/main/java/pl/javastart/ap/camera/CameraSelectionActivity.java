@@ -21,6 +21,7 @@ public class CameraSelectionActivity extends Activity {
 
     {
         lessons.add(0, new Lesson("Pobranie zdjęcia z aparatu", SimpleCameraActivity.class));
+        lessons.add(1, new Lesson("Pobranie zdjęcia z aparatu + Glide", GlideCameraActivity.class));
     }
 
     @Override
@@ -30,7 +31,7 @@ public class CameraSelectionActivity extends Activity {
 
         ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 
-        lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
+        lessonsList.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lessons));
 
         lessonsList.setOnItemClickListener(new OnItemClickListener() {
 

@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:scaleType="fitXY"
-        android:src="@drawable/javastart_big_black" />
+        android:scaleType="fitXY" />
 
 </LinearLayout>

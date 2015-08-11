@@ -11,13 +11,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.io.File;
-import java.io.IOException;
 import java.util.UUID;
 
 import pl.javastart.ap.R;
 
-public class SimpleCameraActivity extends Activity {
+public class GlideCameraActivity extends Activity {
 
     private static final int CAMERA_REQUEST_CODE = 1234;
     private Uri fileUri;
@@ -32,7 +33,7 @@ public class SimpleCameraActivity extends Activity {
     public void makePhotoButtonPressed(View view) {
         String randomName = UUID.randomUUID().toString();
 
-        File storageDir = new File(getExternalFilesDir(null), "javastart_photos");
+        File storageDir = new File(getExternalFilesDir(null), "wydatex_photos");
         if (!storageDir.exists()) {
             storageDir.mkdirs();
         }
@@ -53,18 +54,7 @@ public class SimpleCameraActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "Sukces", Toast.LENGTH_SHORT).show();
 
                 ImageView photo = (ImageView) findViewById(R.id.photo);
-
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-
-                int size = calculateInSampleSize(options, 600, 600);
-
-                options.inJustDecodeBounds = false;
-                options.inSampleSize = size;
-                Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-
-                photo.setImageBitmap(bitmap);
+                Glide.with(this).load(file.getAbsoluteFile()).asBitmap().into(photo);
 
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getApplicationContext(), "Anulowano", Toast.LENGTH_SHORT).show();
@@ -72,26 +62,5 @@ public class SimpleCameraActivity extends Activity {
         }
     }
 
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
 
-        if (height > reqHeight || width > reqWidth) {
-
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) > reqHeight
-                    && (halfWidth / inSampleSize) > reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-
-        return inSampleSize;
-    }
 }

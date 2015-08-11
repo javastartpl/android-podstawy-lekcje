@@ -142,6 +142,10 @@
             android:name=".camera.SimpleCameraActivity"
             android:label="Uruchomienie aparatu"
             android:parentActivityName=".camera.CameraSelectionActivity" />
+        <activity
+            android:name=".camera.GlideCameraActivity"
+            android:label="Glide"
+            android:parentActivityName=".camera.CameraSelectionActivity" />
 
         <!-- File System -->
         <activity
