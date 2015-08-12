@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.UUID;
 
 import pl.javastart.ap.R;
