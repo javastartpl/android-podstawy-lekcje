@@ -128,6 +128,31 @@
             android:label="Zadanie"
             android:parentActivityName=".preference.CurrentPreferencesActivity" />
 
+        <!-- Material design -->
+        <activity
+            android:name=".material.MaterialDesignListActivity"
+            android:parentActivityName=".AllLessonsActivity" />
+        <activity
+            android:name=".material.ToolbarActivity"
+            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2"
+            android:parentActivityName=".material.MaterialDesignListActivity" />
+        <activity
+            android:name=".material.StatusBarColorActivity"
+            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2"
+            android:parentActivityName=".material.MaterialDesignListActivity" />
+        <activity
+            android:name=".material.MaterialColorsActivity"
+            android:theme="@style/Theme.Custom.MaterialColors"
+            android:parentActivityName=".material.MaterialDesignListActivity" />
+        <activity
+            android:name=".material.FloatingActionButtonActivity"
+            android:theme="@style/Theme.Custom.MaterialColors"
+            android:parentActivityName=".material.MaterialDesignListActivity" />
+        <activity
+            android:name=".material.CardViewActivity"
+            android:theme="@style/Theme.Custom.MaterialColors"
+            android:parentActivityName=".material.MaterialDesignListActivity" />
+
         <!-- Camera -->
         <activity
             android:name=".camera.CameraSelectionActivity"

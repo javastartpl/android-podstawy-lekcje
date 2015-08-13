@@ -5,4 +5,9 @@
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">@color/accent</item>
     </style>
+
+
+    <style name="Theme.Custom.MaterialColors" parent="Theme.Custom.MaterialColorsParent">
+        <item name="android:navigationBarColor">#03A9F4</item>
+    </style>
 </resources>

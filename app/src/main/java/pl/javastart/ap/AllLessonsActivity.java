@@ -23,6 +23,7 @@ import pl.javastart.ap.intent.IntentListActivity;
 import pl.javastart.ap.layouts.LayoutListActivity;
 import pl.javastart.ap.listview.ListExampleSelectionActivity;
 import pl.javastart.ap.maps.MapsActivity;
+import pl.javastart.ap.material.MaterialDesignListActivity;
 import pl.javastart.ap.navigationdrawer.NavigationDrawerSelectionActivity;
 import pl.javastart.ap.preference.CurrentPreferencesActivity;
 import pl.javastart.ap.sharedpreferences.SharedPreferencesActivity;
@@ -30,7 +31,7 @@ import pl.javastart.ap.webclient.WebclientActivity;
 
 public class AllLessonsActivity extends Activity {
 
-    private List<Lesson> lessons = new ArrayList<>(30);
+    private List<Lesson> lessons = new ArrayList<>();
 
     {
         lessons.add(new Lesson("Layouty", LayoutListActivity.class));
@@ -43,6 +44,7 @@ public class AllLessonsActivity extends Activity {
         lessons.add(new Lesson("Ustawienia (Preferences)", CurrentPreferencesActivity.class));
         lessons.add(new Lesson("System plików", FileSystemListActivity.class));
         lessons.add(new Lesson("AsyncTask", AsyncTaskListActivity.class));
+        lessons.add(new Lesson("Material design", MaterialDesignListActivity.class));
         lessons.add(new Lesson("Bazy danych", DatabaseListActivity.class));
         lessons.add(new Lesson("Obsługa aparatu", CameraSelectionActivity.class));
         lessons.add(new Lesson("Navigation drawer", NavigationDrawerSelectionActivity.class));

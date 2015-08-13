@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 public class ListExampleSelectionActivity extends Activity {
 
-	private List<Lesson> lessons = new ArrayList<>(2);
+	private List<Lesson> lessons = new ArrayList<>(3);
 	{
 		lessons.add(0, new Lesson("Prosta lista", SimpleListActivity.class));
 		lessons.add(1, new Lesson("Niestandardowe elementy", CustomListActivity.class));
