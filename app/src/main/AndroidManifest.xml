@@ -134,24 +134,24 @@
             android:parentActivityName=".AllLessonsActivity" />
         <activity
             android:name=".material.ToolbarActivity"
-            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2"
-            android:parentActivityName=".material.MaterialDesignListActivity" />
+            android:parentActivityName=".material.MaterialDesignListActivity"
+            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2" />
         <activity
             android:name=".material.StatusBarColorActivity"
-            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2"
-            android:parentActivityName=".material.MaterialDesignListActivity" />
+            android:parentActivityName=".material.MaterialDesignListActivity"
+            android:theme="@style/Theme.Custom.AppCompat.NoActionBar2" />
         <activity
             android:name=".material.MaterialColorsActivity"
-            android:theme="@style/Theme.Custom.MaterialColors"
-            android:parentActivityName=".material.MaterialDesignListActivity" />
+            android:parentActivityName=".material.MaterialDesignListActivity"
+            android:theme="@style/Theme.Custom.MaterialColors" />
         <activity
             android:name=".material.FloatingActionButtonActivity"
-            android:theme="@style/Theme.Custom.MaterialColors"
-            android:parentActivityName=".material.MaterialDesignListActivity" />
+            android:parentActivityName=".material.MaterialDesignListActivity"
+            android:theme="@style/Theme.Custom.MaterialColors" />
         <activity
             android:name=".material.CardViewActivity"
-            android:theme="@style/Theme.Custom.MaterialColors"
-            android:parentActivityName=".material.MaterialDesignListActivity" />
+            android:parentActivityName=".material.MaterialDesignListActivity"
+            android:theme="@style/Theme.Custom.MaterialColors" />
 
         <!-- Camera -->
         <activity
@@ -169,20 +169,9 @@
 
         <!-- Navigation drawer -->
         <activity
-            android:name=".navigationdrawer.NavigationDrawerSelectionActivity"
-            android:label="Navigation drawer"
-            android:parentActivityName=".AllLessonsActivity" />
-
-        <activity
-            android:name=".navigationdrawer.NavigationDrawerActivity"
-            android:label="Navigation drawer"
-            android:parentActivityName=".navigationdrawer.NavigationDrawerSelectionActivity"
-            android:theme="@style/BaseAppCompatTheme" />
-
-        <activity
-            android:name=".navigationdrawer.SupportNavigationDrawerActivity"
-            android:label="Support navigation drawer"
-            android:parentActivityName=".navigationdrawer.NavigationDrawerSelectionActivity"
+            android:name=".navigationdrawer.DesignNavigationDrawerActivity"
+            android:label="Design navigation drawer"
+            android:parentActivityName=".AllLessonsActivity"
             android:theme="@style/Theme.Custom.AppCompat.NoActionBar" />
 
         <!-- File System -->
