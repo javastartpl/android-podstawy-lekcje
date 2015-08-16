@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -99,5 +100,32 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
         categoryAdapter.addAll(categories);
         categorySpinner.invalidate();
         Util.appendToLog(log, "Spinner odźwieżony.");
+    }
+
+    public void categoryDeleteButtonPressed(View view) {
+        if(categorySpinner.getSelectedItem() == null) {
+            return;
+        }
+
+        Category category = (Category) categorySpinner.getSelectedItem();
+
+        Util.appendToLog(log, "Usuwanie kategorii " + category.getName());
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setEndpoint("https://webservice-javastartpl.rhcloud.com/")
+                .build();
+
+        CategoryRetrofitService categoryService = restAdapter.create(CategoryRetrofitService.class);
+
+        categoryService.delete(categorySpinner.getSelectedItemId(), new Callback<Response>() {
+            @Override
+            public void success(Response response, Response response2) {
+                Util.appendToLog(log, "Usunięto.");
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Util.appendToLog(log, "Coś poszło nie tak podczas usuwania.");
+            }
+        });
     }
 }
