@@ -1,8 +1,8 @@
 package pl.javastart.ap.fragment;
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.app.ListFragment;
+import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -20,13 +20,12 @@ public class AnimalListFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         try {
-            mListener = (OnAnimalClickedListener) activity;
+            mListener = (OnAnimalClickedListener) context;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnAnimalClickedListener");
+            throw new ClassCastException(context.toString() + " must implement OnAnimalClickedListener");
         }
     }
 
@@ -46,7 +45,7 @@ public class AnimalListFragment extends ListFragment {
     }
 
     public interface OnAnimalClickedListener {
-        public void onAnimalClicked(int id);
+        void onAnimalClicked(int id);
     }
 
 }

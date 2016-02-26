@@ -1,16 +1,16 @@
 package pl.javastart.ap.preference;
 
-import java.util.Set;
-
-import pl.javastart.ap.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.Set;
+
+import pl.javastart.ap.R;
 
 public class CurrentPreferencesActivity extends Activity {
 

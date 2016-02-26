@@ -100,10 +100,10 @@ public class ActionBarActivity extends Activity implements ActionMode.Callback {
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_action_1:
-                Toast.makeText(this, "Akcja 1", Toast.LENGTH_SHORT).show();;
+                Toast.makeText(this, "Akcja 1", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.menu_action_2:
-                Toast.makeText(this, "Akcja 2", Toast.LENGTH_SHORT).show();;
+                Toast.makeText(this, "Akcja 2", Toast.LENGTH_SHORT).show();
                 mode.finish();
                 return true;
         }
