@@ -9,12 +9,12 @@ import android.view.View;
 
 import pl.javastart.ap.R;
 
-public class FragmentActivity extends Activity implements AnimalListFragment.OnAnimalClickedListener {
+public class AnimalListFragmentActivity extends Activity implements AnimalListFragment.OnAnimalClickedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_animal_list);
+        setContentView(R.layout.activity_fragments_animal_list);
     }
 
     @Override

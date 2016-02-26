@@ -106,11 +106,11 @@
 
         <!-- Fragmenty -->
         <activity
-            android:name=".fragment.FragmentActivity"
+            android:name=".fragment.AnimalListFragmentActivity"
             android:label="@string/title_activity_fragment"
             android:parentActivityName=".AllLessonsActivity" />
         <activity
-            android:name=".fragment.AnimalDetailActivity"
+            android:name=".fragment.AnimalDetailActivity" />
             android:label="Info"
             android:parentActivityName=".fragment.FragmentActivity" />
 

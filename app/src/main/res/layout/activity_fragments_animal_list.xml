@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pl.javastart.ap.fragment.FragmentActivity">
+    tools:context=".fragment.AnimalListFragmentActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:text="Przetestuj również poziomy układ ekranu. Wystarczy, że obrócisz swoje urządzenie."/>
 
     <fragment
-        class="pl.javastart.ap.fragment.SimpleFragment"
+        class="pl.javastart.ap.fragment.AnimalListFragment"
         android:id="@+id/animal_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

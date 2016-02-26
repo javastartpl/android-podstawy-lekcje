@@ -18,7 +18,7 @@ import pl.javastart.ap.camera.CameraSelectionActivity;
 import pl.javastart.ap.database.DatabaseListActivity;
 import pl.javastart.ap.dialog.DialogActivity;
 import pl.javastart.ap.filesystem.FileSystemListActivity;
-import pl.javastart.ap.fragment.FragmentActivity;
+import pl.javastart.ap.fragment.AnimalListFragmentActivity;
 import pl.javastart.ap.intent.IntentListActivity;
 import pl.javastart.ap.layouts.LayoutListActivity;
 import pl.javastart.ap.listview.ListExampleSelectionActivity;
@@ -38,7 +38,7 @@ public class AllLessonsActivity extends Activity {
         lessons.add(new Lesson("Intent", IntentListActivity.class));
         lessons.add(new Lesson("Listy (ListView)", ListExampleSelectionActivity.class));
         lessons.add(new Lesson("Dialogi", DialogActivity.class));
-        lessons.add(new Lesson("Fragmenty", FragmentActivity.class));
+        lessons.add(new Lesson("Fragmenty", AnimalListFragmentActivity.class));
         lessons.add(new Lesson("Action Bar", ActionBarActivity.class));
         lessons.add(new Lesson("SharedPreferences", SharedPreferencesActivity.class));
         lessons.add(new Lesson("Ustawienia (Preferences)", CurrentPreferencesActivity.class));

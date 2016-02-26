@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="15dp">
 
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:text="Kot"
+        tools:text="Kot"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:text="Lorem ipsum"
+        tools:text="Lorem ipsum"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <ImageView
@@ -30,6 +31,6 @@
         android:layout_weight="1"
         android:padding="10dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/cat" />
+        tools:src="@drawable/cat" />
 
 </LinearLayout>
