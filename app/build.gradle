@@ -11,15 +11,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'ormgap'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "pl.javastart.ap"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode 3
-        versionName "1.2-SNAPSHOT"
+        versionName "1.2"
     }
 
     sourceSets {
