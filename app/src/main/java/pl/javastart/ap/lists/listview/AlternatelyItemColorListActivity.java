@@ -1,4 +1,4 @@
-package pl.javastart.ap.listview;
+package pl.javastart.ap.lists.listview;
 
 import pl.javastart.ap.R;
 import android.app.Activity;

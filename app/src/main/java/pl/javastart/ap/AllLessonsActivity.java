@@ -1,8 +1,8 @@
 package pl.javastart.ap;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -21,7 +21,7 @@ import pl.javastart.ap.filesystem.FileSystemListActivity;
 import pl.javastart.ap.fragment.AnimalListFragmentActivity;
 import pl.javastart.ap.intent.IntentListActivity;
 import pl.javastart.ap.layouts.LayoutListActivity;
-import pl.javastart.ap.listview.ListExampleSelectionActivity;
+import pl.javastart.ap.lists.ListExampleSelectionActivity;
 import pl.javastart.ap.maps.MapsActivity;
 import pl.javastart.ap.material.MaterialDesignListActivity;
 import pl.javastart.ap.navigationdrawer.DesignNavigationDrawerActivity;
@@ -29,7 +29,7 @@ import pl.javastart.ap.preference.CurrentPreferencesActivity;
 import pl.javastart.ap.sharedpreferences.SharedPreferencesActivity;
 import pl.javastart.ap.webclient.WebclientActivity;
 
-public class AllLessonsActivity extends Activity {
+public class AllLessonsActivity extends AppCompatActivity {
 
     private List<Lesson> lessons = new ArrayList<>();
 

@@ -1,14 +1,15 @@
-package pl.javastart.ap.listview;
+package pl.javastart.ap.lists.listview;
 
-import pl.javastart.ap.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
+import pl.javastart.ap.R;
 
 public class SimpleListActivity extends Activity {
 

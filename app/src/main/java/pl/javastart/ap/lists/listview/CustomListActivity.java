@@ -1,6 +1,5 @@
-package pl.javastart.ap.listview;
+package pl.javastart.ap.lists.listview;
 
-import pl.javastart.ap.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import pl.javastart.ap.R;
 
 public class CustomListActivity extends Activity {
 
