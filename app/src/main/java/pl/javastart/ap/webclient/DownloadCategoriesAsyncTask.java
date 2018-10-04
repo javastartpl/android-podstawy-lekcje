@@ -12,8 +12,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit.RestAdapter;
-
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<Category>> {
 
@@ -32,7 +32,7 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
     }
 
     private List<Category> getWithAndroidWay() {
-        InputStream response = request("https://webservice-javastartpl.rhcloud.com/categories");
+        InputStream response = request(WebServiceConstants.WEB_SERVICE_URL);
         publishProgress("Pobrano dane, rozpoczęcie parsowania JSON");
         try {
             return readJsonStream(response);
@@ -43,8 +43,9 @@ public class DownloadCategoriesAsyncTask extends AsyncTask<String, String, List<
     }
 
     private List<Category> getWithRetrofit() {
-        RestAdapter adapter = new RestAdapter.Builder()
-                .setEndpoint("https://webservice-javastartpl.rhcloud.com")
+        Retrofit adapter = new Retrofit.Builder()
+                .baseUrl(WebServiceConstants.WEB_SERVICE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
         WebService service = adapter.create(WebService.class);
 

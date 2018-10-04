@@ -2,11 +2,12 @@ package pl.javastart.ap.webclient;
 
 import java.util.List;
 
-import retrofit.http.GET;
+import retrofit2.http.GET;
+
 
 public interface WebService {
 
-    @GET("/categories")
+    @GET("categories")
     List<Category> getAllCategories();
 
 

@@ -36,7 +36,7 @@ public class NewCategoryAsyncTask extends AsyncTask<Category, String, Void> {
 
     @Override
     protected Void doInBackground(Category... params) {
-        request(params[0], "https://webservice-javastartpl.rhcloud.com/categories");
+        request(params[0], WebServiceConstants.WEB_SERVICE_URL + "/categories");
         return null;
     }
 

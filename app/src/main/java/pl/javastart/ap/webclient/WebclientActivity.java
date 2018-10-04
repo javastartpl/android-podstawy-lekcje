@@ -1,7 +1,7 @@
 package pl.javastart.ap.webclient;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,12 +12,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import pl.javastart.ap.R;
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class WebclientActivity extends Activity implements NewCategoryCallback, FinishedDownloadingCatetegoriesCallback {
+public class WebclientActivity extends AppCompatActivity implements NewCategoryCallback, FinishedDownloadingCatetegoriesCallback {
 
     private Spinner categorySpinner;
     private ArrayAdapter<Category> categoryAdapter;
@@ -27,10 +28,11 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webclient);
-        log = (TextView) findViewById(R.id.log);
-        categorySpinner = (Spinner) findViewById(R.id.category_spinner);
+        log = findViewById(R.id.log);
+        categorySpinner = findViewById(R.id.category_spinner);
         categoryAdapter = new ArrayAdapter<>(WebclientActivity.this, android.R.layout.simple_dropdown_item_1line);
         categorySpinner.setAdapter(categoryAdapter);
+        refreshCategories();
     }
 
     @Override
@@ -56,21 +58,23 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
 
     private void refreshCategoriesRetrofit() {
         Util.appendToLog(log, "Pobieranie danych za pomocą Retrofit");
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("https://webservice-javastartpl.rhcloud.com/")
+        Retrofit restAdapter = new Retrofit.Builder()
+                .baseUrl(WebServiceConstants.WEB_SERVICE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         CategoryRetrofitService categoryService = restAdapter.create(CategoryRetrofitService.class);
 
-        categoryService.getAll(new Callback<List<Category>>() {
+        Call<List<Category>> call = categoryService.getAll();
+        call.enqueue(new Callback<List<Category>>() {
             @Override
-            public void success(List<Category> categories, Response response) {
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 Util.appendToLog(log, "Pobrano. Odświeżanie spinnera...");
-                onFinishedDownloadingCategories(categories);
+                onFinishedDownloadingCategories(response.body());
             }
 
             @Override
-            public void failure(RetrofitError error) {
+            public void onFailure(Call<List<Category>> call, Throwable t) {
                 // ignore
             }
         });
@@ -103,27 +107,29 @@ public class WebclientActivity extends Activity implements NewCategoryCallback, 
     }
 
     public void categoryDeleteButtonPressed(View view) {
-        if(categorySpinner.getSelectedItem() == null) {
+        if (categorySpinner.getSelectedItem() == null) {
             return;
         }
 
         Category category = (Category) categorySpinner.getSelectedItem();
 
         Util.appendToLog(log, "Usuwanie kategorii " + category.getName());
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("https://webservice-javastartpl.rhcloud.com/")
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(WebServiceConstants.WEB_SERVICE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        CategoryRetrofitService categoryService = restAdapter.create(CategoryRetrofitService.class);
+        CategoryRetrofitService categoryService = retrofit.create(CategoryRetrofitService.class);
 
-        categoryService.delete(categorySpinner.getSelectedItemId(), new Callback<Response>() {
+        Call<Void> call = categoryService.delete(categorySpinner.getSelectedItemId());
+        call.enqueue(new Callback<Void>() {
             @Override
-            public void success(Response response, Response response2) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 Util.appendToLog(log, "Usunięto.");
             }
 
             @Override
-            public void failure(RetrofitError error) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Util.appendToLog(log, "Coś poszło nie tak podczas usuwania.");
             }
         });
