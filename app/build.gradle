@@ -11,8 +11,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'ormgap'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.2"
 
     defaultConfig {
         applicationId "pl.javastart.ap"
