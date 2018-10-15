@@ -1,13 +1,12 @@
 package pl.javastart.ap.fragment;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ListFragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.fragment.app.ListFragment;
 
 public class AnimalListFragment extends ListFragment {
 

@@ -1,15 +1,15 @@
 package pl.javastart.ap.fragment;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import pl.javastart.ap.R;
 
-public class AnimalListFragmentActivity extends Activity implements AnimalListFragment.OnAnimalClickedListener {
+public class AnimalListFragmentActivity extends AppCompatActivity implements AnimalListFragment.OnAnimalClickedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class AnimalListFragmentActivity extends Activity implements AnimalListFr
             AnimalDetailFragment animalDetailFragment = new AnimalDetailFragment();
             animalDetailFragment.setArguments(bundle);
             findViewById(R.id.label_show_details).setVisibility(View.GONE);
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container_animal_detail, animalDetailFragment);
             transaction.addToBackStack(null);
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
