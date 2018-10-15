@@ -3,8 +3,7 @@ package pl.javastart.ap.fragment;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 
 public class AnimalDetailActivity extends AppCompatActivity {
 

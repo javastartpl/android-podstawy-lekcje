@@ -3,10 +3,10 @@ package pl.javastart.ap.fragment;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import pl.javastart.ap.R;
 
 public class AnimalListFragmentActivity extends AppCompatActivity implements AnimalListFragment.OnAnimalClickedListener {
