@@ -52,7 +52,7 @@ public class GlideCameraActivity extends Activity {
                 Toast.makeText(getApplicationContext(), "Sukces", Toast.LENGTH_SHORT).show();
 
                 ImageView photo = (ImageView) findViewById(R.id.photo);
-                Glide.with(this).load(file.getAbsoluteFile()).asBitmap().into(photo);
+                Glide.with(this).asBitmap().load(file.getAbsoluteFile()).into(photo);
 
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getApplicationContext(), "Anulowano", Toast.LENGTH_SHORT).show();
