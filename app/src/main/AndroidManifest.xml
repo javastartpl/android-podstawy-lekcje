@@ -80,10 +80,10 @@
             android:label="Intent - Zadanie"
             android:parentActivityName=".intent.IntentListActivity" />
 
-        <!-- Listy (ListView) -->
+        <!-- Listy -->
         <activity
             android:name=".lists.ListExampleSelectionActivity"
-            android:label="Listy (ListView)"
+            android:label="Listy"
             android:parentActivityName=".AllLessonsActivity" />
         <activity
             android:name=".lists.recyclerview.SimpleRecyclerViewActivity"
