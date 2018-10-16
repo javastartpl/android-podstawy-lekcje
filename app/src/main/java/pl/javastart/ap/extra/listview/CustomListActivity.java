@@ -23,7 +23,7 @@ public class CustomListActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list);
 
-		ListView animalList = (ListView) findViewById(R.id.animalList);
+		ListView animalList = findViewById(R.id.animalList);
 
 		final Animal[] animals = { new Animal("Kot", R.drawable.cat), new Animal("Pies", R.drawable.dog),
 				new Animal("Słoń", R.drawable.elephant) };
@@ -45,7 +45,7 @@ public class CustomListActivity extends AppCompatActivity {
 		private String name;
 		private int imageResource;
 
-		public Animal(String name, int imageResource) {
+		Animal(String name, int imageResource) {
 			this.name = name;
 			this.imageResource = imageResource;
 		}
@@ -54,7 +54,7 @@ public class CustomListActivity extends AppCompatActivity {
 			return name;
 		}
 
-		public int getImageResource() {
+		int getImageResource() {
 			return imageResource;
 		}
 
@@ -68,7 +68,7 @@ public class CustomListActivity extends AppCompatActivity {
 
 		private Animal[] animals;
 
-		public AnimalAdapter(Animal[] animals) {
+		AnimalAdapter(Animal[] animals) {
 			this.animals = animals;
 		}
 
@@ -94,8 +94,8 @@ public class CustomListActivity extends AppCompatActivity {
 				convertView = inflater.inflate(R.layout.list_item_animal, parent, false);
 			}
 
-			ImageView animalImage = (ImageView) convertView.findViewById(R.id.animal_image);
-			TextView animalName = (TextView) convertView.findViewById(R.id.animal_name);
+			ImageView animalImage = convertView.findViewById(R.id.animal_image);
+			TextView animalName = convertView.findViewById(R.id.animal_name);
 
 			animalImage.setImageResource(getItem(position).getImageResource());
 			animalName.setText(getItem(position).getName());
