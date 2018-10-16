@@ -1,12 +1,12 @@
 package pl.javastart.ap.camera;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,7 +16,7 @@ import java.util.UUID;
 
 import pl.javastart.ap.R;
 
-public class SimpleCameraActivity extends Activity {
+public class SimpleCameraActivity extends AppCompatActivity {
 
     private static final int CAMERA_REQUEST_CODE = 1234;
     private Uri fileUri;
