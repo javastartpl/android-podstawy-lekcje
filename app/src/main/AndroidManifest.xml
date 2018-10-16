@@ -90,16 +90,8 @@
             android:label="RecyclerView"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
         <activity
-            android:name=".extra.listview.SimpleListActivity"
-            android:label="Prosta lista"
-            android:parentActivityName=".lists.ListExampleSelectionActivity" />
-        <activity
-            android:name=".extra.listview.CustomListActivity"
-            android:label="Lista niestandardowa"
-            android:parentActivityName=".lists.ListExampleSelectionActivity" />
-        <activity
-            android:name=".extra.listview.AlternatelyItemColorListActivity"
-            android:label="Naprzemienne kolory"
+            android:name=".lists.recyclerview.CustomRecyclerViewActivity"
+            android:label="RecyclerView"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
 
         <!-- Shared Preferences -->
@@ -273,12 +265,20 @@
         <!-- Extra Items -->
         <activity
             android:name=".extra.ExtraItemsListActivity"
-            android:label="Materiały dodatkowe">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AllLessonsActivity" />
-        </activity>
-
+            android:label="Materiały dodatkowe"
+            android:parentActivityName=".AllLessonsActivity" />
+        <activity
+            android:name=".extra.listview.SimpleListActivity"
+            android:label="Prosta lista"
+            android:parentActivityName=".extra.ExtraItemsListActivity" />
+        <activity
+            android:name=".extra.listview.CustomListActivity"
+            android:label="Lista niestandardowa"
+            android:parentActivityName=".extra.ExtraItemsListActivity" />
+        <activity
+            android:name=".extra.listview.AlternatelyItemColorListActivity"
+            android:label="Naprzemienne kolory"
+            android:parentActivityName=".extra.ExtraItemsListActivity" />
 
     </application>
 

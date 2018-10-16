@@ -14,6 +14,7 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
+import pl.javastart.ap.lists.recyclerview.CustomRecyclerViewActivity;
 import pl.javastart.ap.lists.recyclerview.SimpleRecyclerViewActivity;
 
 public class ListExampleSelectionActivity extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class ListExampleSelectionActivity extends AppCompatActivity {
 	private List<Lesson> lessons = new ArrayList<>();
 	{
 		lessons.add(new Lesson("RecyclerView: Prosta lista", SimpleRecyclerViewActivity.class));
+		lessons.add(new Lesson("RecyclerView: Personalizowana lista", CustomRecyclerViewActivity.class));
 	}
 
 	@Override
