@@ -36,7 +36,7 @@ public class AllLessonsActivity extends AppCompatActivity {
     {
         lessons.add(new Lesson("Layouty", LayoutListActivity.class));
         lessons.add(new Lesson("Intent", IntentListActivity.class));
-        lessons.add(new Lesson("Listy (ListView)", ListExampleSelectionActivity.class));
+        lessons.add(new Lesson("Listy", ListExampleSelectionActivity.class));
         lessons.add(new Lesson("Dialogi", DialogActivity.class));
         lessons.add(new Lesson("Fragmenty", AnimalListFragmentActivity.class));
         lessons.add(new Lesson("Action Bar", ActionBarActivity.class));
