@@ -1,7 +1,7 @@
 package pl.javastart.ap.database.manual;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import pl.javastart.ap.R;
-import pl.javastart.ap.database.manual.model.User;
 import pl.javastart.ap.database.manual.model.ManualUserRepository;
+import pl.javastart.ap.database.manual.model.User;
 
-public class ManualDatabaseUserActivity extends Activity {
+public class ManualDatabaseUserActivity extends AppCompatActivity {
 
     public static final String PARAM_USER_ID = "param.user.id";
     private static final int INVALID_ID = -100;

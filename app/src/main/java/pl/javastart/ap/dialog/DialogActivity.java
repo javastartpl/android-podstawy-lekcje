@@ -1,14 +1,14 @@
 package pl.javastart.ap.dialog;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import pl.javastart.ap.R;
 
-public class DialogActivity extends Activity implements DialogInterface.OnClickListener {
+public class DialogActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
     private TextView selectedOptionText;
 

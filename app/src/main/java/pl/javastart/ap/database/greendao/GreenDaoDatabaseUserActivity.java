@@ -1,7 +1,7 @@
 package pl.javastart.ap.database.greendao;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import pl.javastart.ap.R;
 import pl.javastart.ap.database.greendao.database.User;
 
-public class GreenDaoDatabaseUserActivity extends Activity {
+public class GreenDaoDatabaseUserActivity extends AppCompatActivity {
 
     public static final String PARAM_USER_ID = "param.user.id";
     private static final int INVALID_ID = -100;

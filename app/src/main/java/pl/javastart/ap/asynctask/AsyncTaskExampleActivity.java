@@ -1,9 +1,9 @@
 package pl.javastart.ap.asynctask;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import pl.javastart.ap.R;
 
-public class AsyncTaskExampleActivity extends Activity {
+public class AsyncTaskExampleActivity extends AppCompatActivity {
 
     private TextView informationLabel;
 

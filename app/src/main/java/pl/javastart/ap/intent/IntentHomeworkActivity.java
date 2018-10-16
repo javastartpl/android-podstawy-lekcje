@@ -1,14 +1,14 @@
 package pl.javastart.ap.intent;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import pl.javastart.ap.R;
 
-public class IntentHomeworkActivity extends Activity {
+public class IntentHomeworkActivity extends AppCompatActivity {
 
     private EditText titleField;
     private EditText messageField;

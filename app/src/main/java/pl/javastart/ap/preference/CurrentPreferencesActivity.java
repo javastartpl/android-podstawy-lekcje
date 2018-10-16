@@ -1,10 +1,10 @@
 package pl.javastart.ap.preference;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -12,7 +12,7 @@ import java.util.Set;
 
 import pl.javastart.ap.R;
 
-public class CurrentPreferencesActivity extends Activity {
+public class CurrentPreferencesActivity extends AppCompatActivity {
 
 	private static final String PREF_LIGHT = "pref_light";
 	private static final String PREF_WAHSING_MASHINE = "pref_washing_machine";

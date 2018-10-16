@@ -1,7 +1,7 @@
 package pl.javastart.ap.maps;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import pl.javastart.ap.R;
 
-public class MapsActivity extends Activity implements OnMapReadyCallback, MapTypeDialogFragment.MapTypeSelectionListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, MapTypeDialogFragment.MapTypeSelectionListener {
 
     private GoogleMap googleMap;
 

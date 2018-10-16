@@ -1,15 +1,15 @@
 package pl.javastart.ap.asynctask;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import pl.javastart.ap.R;
 
-public class AsyncTaskTrainingActivity extends Activity {
+public class AsyncTaskTrainingActivity extends AppCompatActivity {
 
     private TextView countdownLabel;
     private Button countdownButton;

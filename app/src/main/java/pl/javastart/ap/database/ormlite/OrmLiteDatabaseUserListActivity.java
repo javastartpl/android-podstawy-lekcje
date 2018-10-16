@@ -1,8 +1,8 @@
 package pl.javastart.ap.database.ormlite;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +21,7 @@ import pl.javastart.ap.R;
 import pl.javastart.ap.database.ormlite.model.OrmLiteUserRepository;
 import pl.javastart.ap.database.ormlite.model.User;
 
-public class OrmLiteDatabaseUserListActivity extends Activity {
+public class OrmLiteDatabaseUserListActivity extends AppCompatActivity {
 
     private Button addUserButton;
     private EditText nameEditText;

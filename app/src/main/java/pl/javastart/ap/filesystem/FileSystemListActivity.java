@@ -1,20 +1,21 @@
 package pl.javastart.ap.filesystem;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
-public class FileSystemListActivity extends Activity {
+public class FileSystemListActivity extends AppCompatActivity {
 
 	private List<Lesson> lessons = new ArrayList<>(2);
 	{

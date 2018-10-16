@@ -1,7 +1,7 @@
 package pl.javastart.ap.database.ormlite;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import pl.javastart.ap.R;
-import pl.javastart.ap.database.ormlite.model.User;
 import pl.javastart.ap.database.ormlite.model.OrmLiteUserRepository;
+import pl.javastart.ap.database.ormlite.model.User;
 
-public class OrmLiteDatabaseUserActivity extends Activity {
+public class OrmLiteDatabaseUserActivity extends AppCompatActivity {
 
     public static final String PARAM_USER_ID = "param.user.id";
     private static final int INVALID_ID = -100;

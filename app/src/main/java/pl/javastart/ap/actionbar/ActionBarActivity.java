@@ -1,7 +1,7 @@
 package pl.javastart.ap.actionbar;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 import pl.javastart.ap.R;
 
 
-public class ActionBarActivity extends Activity implements ActionMode.Callback {
+public class ActionBarActivity extends AppCompatActivity implements ActionMode.Callback {
 
     private boolean displayTitle = true;
     private boolean displayHomeButton = true;

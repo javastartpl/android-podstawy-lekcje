@@ -1,17 +1,18 @@
 package pl.javastart.ap.filesystem;
 
-import java.io.File;
-import java.io.IOException;
-
-import pl.javastart.ap.R;
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class FileSystemHomeworkActivity extends Activity {
+import java.io.File;
+import java.io.IOException;
+
+import pl.javastart.ap.R;
+
+public class FileSystemHomeworkActivity extends AppCompatActivity {
 
 	private EditText dirNameEditText;
 	private EditText fileNameEditText;

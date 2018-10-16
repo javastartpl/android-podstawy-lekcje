@@ -1,11 +1,11 @@
 package pl.javastart.ap.layouts;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import pl.javastart.ap.R;
 
-public class LayoutTrainingActivity extends Activity {
+public class LayoutTrainingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

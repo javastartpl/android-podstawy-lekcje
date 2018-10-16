@@ -1,13 +1,14 @@
 package pl.javastart.ap.sharedpreferences;
 
-import pl.javastart.ap.R;
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class SharedPreferencesActivity extends Activity {
+import pl.javastart.ap.R;
+
+public class SharedPreferencesActivity extends AppCompatActivity {
 
 	private static final String prefFirstRun = "pref_first_run";
 	private static final String prefName = "pref_name";

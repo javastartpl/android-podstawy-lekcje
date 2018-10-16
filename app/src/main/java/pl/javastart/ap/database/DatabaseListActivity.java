@@ -1,8 +1,8 @@
 package pl.javastart.ap.database;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -18,7 +18,7 @@ import pl.javastart.ap.database.greendao.GreenDaoDatabaseUserListActivity;
 import pl.javastart.ap.database.manual.ManualDatabaseUserListActivity;
 import pl.javastart.ap.database.ormlite.OrmLiteDatabaseUserListActivity;
 
-public class DatabaseListActivity extends Activity {
+public class DatabaseListActivity extends AppCompatActivity {
 
     private List<Lesson> lessons = new ArrayList<>(2);
 
