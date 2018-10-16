@@ -17,6 +17,7 @@ import pl.javastart.ap.asynctask.AsyncTaskListActivity;
 import pl.javastart.ap.camera.CameraSelectionActivity;
 import pl.javastart.ap.database.DatabaseListActivity;
 import pl.javastart.ap.dialog.DialogActivity;
+import pl.javastart.ap.extra.ExtraItemsListActivity;
 import pl.javastart.ap.filesystem.FileSystemListActivity;
 import pl.javastart.ap.fragment.AnimalListFragmentActivity;
 import pl.javastart.ap.intent.IntentListActivity;
@@ -50,6 +51,7 @@ public class AllLessonsActivity extends AppCompatActivity {
         lessons.add(new Lesson("Navigation drawer", DesignNavigationDrawerActivity.class));
         lessons.add(new Lesson("Google Maps", MapsActivity.class));
         lessons.add(new Lesson("Komunikacja z serwerem", WebclientActivity.class));
+        lessons.add(new Lesson("Materiały dodatkowe", ExtraItemsListActivity.class));
     }
 
     @Override

@@ -90,15 +90,15 @@
             android:label="RecyclerView"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
         <activity
-            android:name=".lists.listview.SimpleListActivity"
+            android:name=".extra.listview.SimpleListActivity"
             android:label="Prosta lista"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
         <activity
-            android:name=".lists.listview.CustomListActivity"
+            android:name=".extra.listview.CustomListActivity"
             android:label="Lista niestandardowa"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
         <activity
-            android:name=".lists.listview.AlternatelyItemColorListActivity"
+            android:name=".extra.listview.AlternatelyItemColorListActivity"
             android:label="Naprzemienne kolory"
             android:parentActivityName=".lists.ListExampleSelectionActivity" />
 
@@ -124,7 +124,7 @@
         </activity>
         <activity
             android:name=".fragment.AnimalDetailActivity"
-            android:label="Info" >
+            android:label="Info">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".fragment.AnimalListFragmentActivity" />
@@ -269,6 +269,15 @@
             android:name=".webclient.WebclientActivity"
             android:label="Webclient"
             android:parentActivityName=".AllLessonsActivity" />
+
+        <!-- Extra Items -->
+        <activity
+            android:name=".extra.ExtraItemsListActivity"
+            android:label="Materiały dodatkowe">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AllLessonsActivity" />
+        </activity>
 
 
     </application>

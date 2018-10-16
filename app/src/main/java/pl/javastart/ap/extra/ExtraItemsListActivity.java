@@ -1,4 +1,4 @@
-package pl.javastart.ap.lists;
+package pl.javastart.ap.extra;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +14,17 @@ import java.util.List;
 
 import pl.javastart.ap.Lesson;
 import pl.javastart.ap.R;
-import pl.javastart.ap.lists.recyclerview.SimpleRecyclerViewActivity;
+import pl.javastart.ap.extra.listview.AlternatelyItemColorListActivity;
+import pl.javastart.ap.extra.listview.CustomListActivity;
+import pl.javastart.ap.extra.listview.SimpleListActivity;
 
-public class ListExampleSelectionActivity extends AppCompatActivity {
+public class ExtraItemsListActivity extends AppCompatActivity {
 
-	private List<Lesson> lessons = new ArrayList<>();
+	private List<Lesson> lessons = new ArrayList<>(2);
 	{
-		lessons.add(new Lesson("RecyclerView: Prosta lista", SimpleRecyclerViewActivity.class));
+		lessons.add(new Lesson("ListView: Prosta lista", SimpleListActivity.class));
+		lessons.add(new Lesson("ListView: Niestandardowe elementy", CustomListActivity.class));
+		lessons.add(new Lesson("ListView: Naprzemienne kolory", AlternatelyItemColorListActivity.class));
 	}
 
 	@Override
@@ -28,7 +32,7 @@ public class ListExampleSelectionActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_all_lessons_list);
 
-		ListView lessonsList = findViewById(R.id.lessonsList);
+		ListView lessonsList = (ListView) findViewById(R.id.lessonsList);
 
 		lessonsList.setAdapter(new ArrayAdapter<Lesson>(this, android.R.layout.simple_list_item_1, lessons));
 
@@ -41,5 +45,4 @@ public class ListExampleSelectionActivity extends AppCompatActivity {
 			}
 		});
 	}
-
 }

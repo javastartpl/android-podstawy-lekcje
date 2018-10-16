@@ -1,8 +1,8 @@
-package pl.javastart.ap.lists.listview;
+package pl.javastart.ap.extra.listview;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import pl.javastart.ap.R;
 
-public class CustomListActivity extends Activity {
+public class CustomListActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

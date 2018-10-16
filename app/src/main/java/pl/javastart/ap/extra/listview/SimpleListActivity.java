@@ -1,7 +1,7 @@
-package pl.javastart.ap.lists.listview;
+package pl.javastart.ap.extra.listview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import pl.javastart.ap.R;
 
-public class SimpleListActivity extends Activity {
+public class SimpleListActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
