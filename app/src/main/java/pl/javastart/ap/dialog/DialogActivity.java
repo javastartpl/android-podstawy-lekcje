@@ -21,7 +21,7 @@ public class DialogActivity extends AppCompatActivity implements DialogInterface
 
     public void infoDialog(View view) {
         InfoDialogFragment infoDialogFragment = new InfoDialogFragment();
-        infoDialogFragment.show(getFragmentManager(), null);
+        infoDialogFragment.show(getSupportFragmentManager(), null);
     }
 
     @Override
