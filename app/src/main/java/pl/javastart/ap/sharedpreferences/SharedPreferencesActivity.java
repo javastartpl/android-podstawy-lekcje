@@ -2,7 +2,7 @@ package pl.javastart.ap.sharedpreferences;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 

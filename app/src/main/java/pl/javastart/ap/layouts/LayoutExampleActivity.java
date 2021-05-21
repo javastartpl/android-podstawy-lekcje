@@ -1,7 +1,7 @@
 package pl.javastart.ap.layouts;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import pl.javastart.ap.R;
 
