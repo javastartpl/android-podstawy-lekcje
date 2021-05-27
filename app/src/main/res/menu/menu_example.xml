@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/menu_example_one"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="ifRoom|withText"
         android:icon="@android:drawable/sym_action_email"
         android:title="Jeden" />
 
     <item android:id="@+id/menu_example_two"
-        android:showAsAction="ifRoom"
+        app:showAsAction="ifRoom"
         android:title="Dwa" />
 
     <item android:id="@+id/menu_example_three"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="ifRoom|withText"
         android:title="Trzy" />
 
     <item android:id="@+id/menu_example_four"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="ifRoom|withText"
         android:title="Cztery" />
 
     <item android:id="@+id/menu_example_five"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="ifRoom|withText"
         android:title="Pieć" />
 
     <item android:id="@+id/menu_example_six"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="ifRoom|withText"
         android:title="Sześć" />
 
 </menu>

@@ -22,8 +22,8 @@ public class ActionBarActivity extends AppCompatActivity implements ActionMode.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_action_bar);
 
-        if(getActionBar() != null) {
-            getActionBar().setDisplayShowTitleEnabled(displayTitle);
+        if(getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(displayTitle);
         }
     }
 
@@ -65,17 +65,17 @@ public class ActionBarActivity extends AppCompatActivity implements ActionMode.C
 
     public void toggleTitleButton(View view) {
         displayTitle = !displayTitle;
-        if (getActionBar() != null) {
-            getActionBar().setDisplayShowTitleEnabled(displayTitle);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(displayTitle);
         }
     }
 
     public void toogleActionBarVisibilityButton(View view) {
-        if(getActionBar() != null) {
-            if(getActionBar().isShowing()) {
-                getActionBar().hide();
+        if(getSupportActionBar() != null) {
+            if(getSupportActionBar().isShowing()) {
+                getSupportActionBar().hide();
             } else {
-                getActionBar().show();
+                getSupportActionBar().show();
             }
         }
     }
@@ -116,9 +116,9 @@ public class ActionBarActivity extends AppCompatActivity implements ActionMode.C
     }
 
     public void toggleHomeButton(View view) {
-        if(getActionBar() != null) {
+        if(getSupportActionBar() != null) {
             displayHomeButton = !displayHomeButton;
-            getActionBar().setDisplayHomeAsUpEnabled(displayHomeButton);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(displayHomeButton);
         }
     }
 }
